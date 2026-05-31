@@ -1,0 +1,7 @@
+# Python dependencies for the `design` skill's AI generation scripts
+# (logo / icon / CIP generation via Gemini).
+# Installed automatically by the SessionStart hook in .claude/settings.json.
+google-genai
+Pillow
+cffi
+

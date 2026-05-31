@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -m pip install --quiet --disable-pip-version-check -r .claude/skills/design/requirements.txt 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
