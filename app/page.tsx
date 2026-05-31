@@ -69,17 +69,17 @@ export default function Home() {
           <div>
             <div className="text-gold text-[10px] uppercase tracking-[0.25em] mb-2 font-semibold">Sunday Morning</div>
             <div className="font-display text-xl">Worship · 10:45 AM</div>
-            <div className="text-cream/60 text-xs mt-1">Bible Study for all ages · 9:30 AM</div>
+            <div className="text-cream/60 text-xs mt-1">Morning service</div>
           </div>
           <div className="border-y md:border-y-0 md:border-x border-cream/15 py-5 md:py-0">
             <div className="text-gold text-[10px] uppercase tracking-[0.25em] mb-2 font-semibold">Sunday Evening</div>
             <div className="font-display text-xl">Worship · 6:00 PM</div>
-            <div className="text-cream/60 text-xs mt-1">Every Sunday night</div>
+            <div className="text-cream/60 text-xs mt-1">Evening service</div>
           </div>
           <div>
             <div className="text-gold text-[10px] uppercase tracking-[0.25em] mb-2 font-semibold">Wednesday Night</div>
-            <div className="font-display text-xl">Prayer · 6:00 PM</div>
-            <div className="text-cream/60 text-xs mt-1">Youth · Children · Adult Prayer</div>
+            <div className="font-display text-xl">Youth · Children · Prayer</div>
+            <div className="text-cream/60 text-xs mt-1">Wednesdays · 6:00 PM</div>
           </div>
         </div>
       </section>

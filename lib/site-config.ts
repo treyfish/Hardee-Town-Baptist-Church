@@ -17,8 +17,8 @@ export const siteConfig = {
 
   serviceTimes: {
     sundayMorningWorship: "10:45 AM",
-    sundayBibleStudy: "9:30 AM",
     sundayEveningWorship: "6:00 PM",
+    // Wednesdays at 6:00 PM: Youth, Children, and Adult Prayer Meeting
     wednesday: "6:00 PM",
   },
 
