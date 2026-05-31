@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #faf6f0;
-  --color-cream-2: #f3ece0;
-  --color-ink: #161412;
-  --color-ink-2: #2a2522;
-  --color-burgundy: #7a1c2e;
-  --color-burgundy-dark: #5e1424;
-  --color-gold: #c8a96a;
-  --color-gold-light: #e3cb96;
-  --color-warm-gray: #6b6259;
+  /* Brand palette derived from the church logo (gold + blue) on a warm
+     cream base. The token names below are kept stable across the app; only
+     the values changed when we moved from burgundy to the logo colors.
+     "burgundy" = primary brand blue (legacy name retained intentionally). */
+  --color-cream: #faf7f1;
+  --color-cream-2: #eef1f3;
+  --color-ink: #0f2433;
+  --color-ink-2: #1c3a4f;
+  --color-burgundy: #1488bf;
+  --color-burgundy-dark: #0e6189;
+  --color-gold: #d79f24;
+  --color-gold-light: #ecc874;
+  --color-warm-gray: #5d6b73;
 
   --font-display: "Fraunces Variable", Georgia, serif;
   --font-sans: "Inter Variable", system-ui, sans-serif;

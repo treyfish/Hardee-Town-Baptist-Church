@@ -16,9 +16,8 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-burgundy/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-            <div className="w-11 h-11 bg-burgundy text-cream rounded-full flex items-center justify-center font-display font-bold text-lg shadow-sm">
-              H
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Hardeetown Baptist Church logo" className="h-11 w-auto" />
             <div className="leading-tight">
               <div className="font-display font-semibold text-[17px]">Hardeetown</div>
               <div className="text-[10px] uppercase tracking-[0.22em] text-warm-gray">Baptist Church</div>
@@ -183,48 +182,73 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-ink text-cream py-24 md:py-32 px-6 relative overflow-hidden">
+      <section id="staff" className="bg-ink text-cream py-24 md:py-32 px-6 relative overflow-hidden scroll-mt-24">
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, rgba(250,246,240,0.4) 1px, transparent 0)",
+            backgroundImage: "radial-gradient(circle at 1px 1px, rgba(250,247,241,0.35) 1px, transparent 0)",
             backgroundSize: "28px 28px",
           }}
         ></div>
         <div className="relative max-w-6xl mx-auto">
-          <div className="text-center mb-14 fade-up">
+          <div className="text-center mb-16 fade-up">
             <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Who we are</div>
-            <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight">Faces of Hardeetown</h2>
+            <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight">Meet Our Staff</h2>
             <p className="text-cream/70 max-w-2xl mx-auto text-lg">
-              A church is its people. These are some of the folks you&apos;ll meet when you walk through our doors.
+              A church is its people. Here are some of the folks who would love to welcome you on Sunday.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 fade-up">
+
+          <div className="space-y-16 md:space-y-24">
             {[
-              { name: "Sarah K.", role: "Children's Ministry", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80&auto=format&fit=crop" },
-              { name: "Mark T.", role: "UPWARD Sports Coach", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format&fit=crop" },
-              { name: "Jenna R.", role: "Worship Team", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80&auto=format&fit=crop" },
-              { name: "David P.", role: "Adult Bible Study", img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80&auto=format&fit=crop" },
-              { name: "Linda M.", role: "Hospitality", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop" },
-              { name: "James W.", role: "Deacon", img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&q=80&auto=format&fit=crop" },
-              { name: "Megan L.", role: "Youth Leader", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80&auto=format&fit=crop" },
-              { name: "Ruth A.", role: "Awana Volunteer", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80&auto=format&fit=crop" },
-            ].map((p) => (
-              <div key={p.name} className="text-center">
-                <div className="relative aspect-square rounded-full overflow-hidden mx-auto mb-4 border-4 border-cream/10">
-                  <span className="placeholder-badge">Placeholder</span>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.img} className="w-full h-full object-cover" alt="" />
+              {
+                name: "Rev. Tony Parker",
+                role: "Senior Pastor",
+                img: "/staff/tony-parker.jpg",
+                bio: [
+                  "Bro. Tony graduated from The Baptist College of Florida in 1989. He accepted Jesus Christ as his Lord and Savior at the age of twelve, and God called him into the ministry shortly after he graduated from Eastside High School in Gainesville. Since then he has served in many capacities within the church — Youth Minister, Associate Pastor, Interim Pastor, teacher, and more.",
+                  "Bro. Tony has a burning passion to love and guide people and to see their lives changed by the power of God. He and his wife, Debbie, have four grown children and several grandchildren. Besides being Bro. Tony's soulmate and a fantastic lady of God, Debbie is a dedicated police officer and a great asset to HBC.",
+                ],
+                note: "We are so blessed to have Bro. Tony as our pastor!",
+              },
+              {
+                name: "Charles Brock",
+                role: "Worship Minister",
+                img: "/staff/charles-brock.jpg",
+                bio: [
+                  "Our worship leader, Charles Brock, is a life-long resident of Levy County. Charles married his wife, Donna, in 1983, and they have two grown children, Chad and Maegan, who are both teachers.",
+                  "Charles graduated from Trenton High School in 1978. He has been leading worship since he was a youth and served several churches in the area before coming to Hardeetown. He was ordained as a deacon in 1990.",
+                ],
+                note: "",
+              },
+              {
+                name: "Rev. Kevin Amerson",
+                role: "Associate Pastor · Student Ministry",
+                img: "/staff/kevin-amerson.jpg",
+                bio: [
+                  "Kevin Amerson serves as our Associate Pastor of Student Ministry. A graduate of Colorado Christian University with a focus on apologetic studies, Kevin is deeply passionate about guiding young people in their faith — equipping students with biblical truth and nurturing their growth into strong disciples of Christ.",
+                  "Alongside his wife, Leslie, Kevin brings a heart for ministry and a dedication to serving the next generation. His leadership, wisdom, and commitment to the gospel are a tremendous blessing to our church and community.",
+                ],
+                note: "",
+              },
+            ].map((p, i) => (
+              <div key={p.name} className="grid md:grid-cols-5 gap-8 md:gap-12 items-center fade-up">
+                <div className={`md:col-span-2 ${i % 2 ? "md:order-2" : ""}`}>
+                  <div className="relative aspect-[4/5] max-w-sm mx-auto overflow-hidden rounded-2xl ring-1 ring-cream/15 shadow-xl shadow-black/30">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top" />
+                  </div>
                 </div>
-                <div className="font-display text-lg">{p.name}</div>
-                <div className="text-gold text-xs uppercase tracking-widest mt-1">{p.role}</div>
+                <div className={`md:col-span-3 ${i % 2 ? "md:order-1" : ""}`}>
+                  <h3 className="font-display text-3xl md:text-4xl mb-1">{p.name}</h3>
+                  <div className="text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-5">{p.role}</div>
+                  {p.bio.map((para, j) => (
+                    <p key={j} className="text-cream/75 leading-relaxed mb-4">{para}</p>
+                  ))}
+                  {p.note && <p className="text-gold-light font-display text-lg mt-2">{p.note}</p>}
+                </div>
               </div>
             ))}
-          </div>
-          <div className="text-center mt-12">
-            <p className="text-cream/60 italic max-w-xl mx-auto">
-              &ldquo;Come and see for yourself. There&apos;s a seat saved for you on Sunday.&rdquo;
-            </p>
           </div>
         </div>
       </section>
@@ -371,7 +395,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-burgundy text-cream rounded-full flex items-center justify-center font-display font-bold">H</div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Hardeetown Baptist Church logo" className="h-12 w-auto" />
               <div>
                 <div className="font-display font-semibold text-lg">Hardeetown</div>
                 <div className="text-[10px] uppercase tracking-[0.22em] text-cream/60">Baptist Church</div>
