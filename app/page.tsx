@@ -1,6 +1,12 @@
 import FadeInit from "./fade-init";
+import GoogleCalendar from "./google-calendar";
+import { siteConfig } from "@/lib/site-config";
 
 export default function Home() {
+  const giveHref = siteConfig.givingUrl || "#visit";
+  const giveProps = siteConfig.givingUrl
+    ? { href: giveHref, target: "_blank", rel: "noopener" }
+    : { href: giveHref };
   return (
     <>
       <div className="bg-ink text-cream text-center py-2 text-[11px] tracking-[0.2em] font-medium">
@@ -161,6 +167,19 @@ export default function Home() {
               </article>
             ))}
           </div>
+
+          <div id="calendar" className="mt-20 scroll-mt-24 fade-up">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 gap-4">
+              <div>
+                <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-3 font-semibold">Church calendar</div>
+                <h3 className="font-display text-3xl md:text-4xl leading-tight">Everything in one place</h3>
+              </div>
+              <p className="text-warm-gray text-sm max-w-sm md:text-right">
+                Services, studies, and events — kept up to date automatically. Add it to your own calendar with one tap.
+              </p>
+            </div>
+            <GoogleCalendar />
+          </div>
         </div>
       </section>
 
@@ -226,7 +245,7 @@ export default function Home() {
               { title: "Adults", desc: "Small groups, Bible studies, and friendships that walk with you through every season of life.", img: "https://images.unsplash.com/photo-1543269664-647b9ba6a410?w=600&q=80&auto=format&fit=crop" },
               { title: "UPWARD Sports", desc: "Basketball and cheer leagues for kids — building character on and off the court.", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=80&auto=format&fit=crop" },
             ].map((m) => (
-              <a key={m.title} href="#" className="group block bg-cream-2 rounded-xl overflow-hidden lift">
+              <a key={m.title} href="#visit" className="group block bg-cream-2 rounded-xl overflow-hidden lift">
                 <div className="relative h-48 overflow-hidden">
                   <span className="placeholder-badge">Placeholder</span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -290,8 +309,8 @@ export default function Home() {
             Every gift goes directly toward the ministry of Hardeetown — supporting missions, ministries, and the day-to-day work of the church.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#" className="bg-cream text-burgundy px-7 py-3.5 rounded-full font-semibold hover:bg-gold hover:text-ink transition">Give Online</a>
-            <a href="#" className="border-2 border-cream text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-cream hover:text-burgundy transition">Other Ways to Give</a>
+            <a {...giveProps} className="bg-cream text-burgundy px-7 py-3.5 rounded-full font-semibold hover:bg-gold hover:text-ink transition">Give Online</a>
+            <a href="#visit" className="border-2 border-cream text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-cream hover:text-burgundy transition">Other Ways to Give</a>
           </div>
         </div>
       </section>
@@ -370,6 +389,11 @@ export default function Home() {
               <a href="https://www.youtube.com/channel/UClz59vJ7Pxt-RQuzWhtM99Q" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="YouTube">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/hbc_chiefland/" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.247 2.242 1.309 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.309 3.608-.975.975-2.242 1.247-3.608 1.309-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.309-.975-.975-1.247-2.242-1.309-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.309-3.608.975-.974 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0 1.802c-3.15 0-3.523.012-4.767.069-1.024.047-1.58.218-1.95.362-.49.19-.84.418-1.207.785a3.25 3.25 0 0 0-.785 1.207c-.144.37-.315.926-.362 1.95-.057 1.244-.069 1.617-.069 4.767s.012 3.523.069 4.767c.047 1.024.218 1.58.362 1.95.19.49.418.84.785 1.207.367.367.717.595 1.207.785.37.144.926.315 1.95.362 1.244.057 1.617.069 4.767.069s3.523-.012 4.767-.069c1.024-.047 1.58-.218 1.95-.362.49-.19.84-.418 1.207-.785.367-.367.595-.717.785-1.207.144-.37.315-.926.362-1.95.057-1.244.069-1.617.069-4.767s-.012-3.523-.069-4.767c-.047-1.024-.218-1.58-.362-1.95a3.25 3.25 0 0 0-.785-1.207 3.25 3.25 0 0 0-1.207-.785c-.37-.144-.926-.315-1.95-.362-1.244-.057-1.617-.069-4.767-.069zm0 3.063a5.972 5.972 0 1 0 0 11.944 5.972 5.972 0 0 0 0-11.944zm0 9.852a3.88 3.88 0 1 1 0-7.76 3.88 3.88 0 0 1 0 7.76zm7.605-10.087a1.396 1.396 0 1 1-2.792 0 1.396 1.396 0 0 1 2.792 0z" />
                 </svg>
               </a>
             </div>
