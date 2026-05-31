@@ -126,7 +126,7 @@ export default function Home() {
             Join us live every Sunday morning at 10:45 AM on Facebook or YouTube. Past services are archived so you can catch up anytime.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://www.facebook.com/Hardeetown/" target="_blank" rel="noopener" className="bg-burgundy text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-burgundy-dark transition inline-flex items-center gap-2 justify-center">Watch on Facebook</a>
+            <a href="https://www.facebook.com/profile.php?id=61556940396902" target="_blank" rel="noopener" className="bg-burgundy text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-burgundy-dark transition inline-flex items-center gap-2 justify-center">Watch on Facebook</a>
             <a href="https://www.youtube.com/channel/UClz59vJ7Pxt-RQuzWhtM99Q" target="_blank" rel="noopener" className="bg-ink text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-ink-2 transition inline-flex items-center gap-2 justify-center">YouTube Archive</a>
           </div>
         </div>
@@ -381,7 +381,7 @@ export default function Home() {
               A family of believers in Chiefland, Florida, growing in Christ and reaching our community with the hope of the Gospel.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/Hardeetown/" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61556940396902" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="Facebook">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z" />
                 </svg>

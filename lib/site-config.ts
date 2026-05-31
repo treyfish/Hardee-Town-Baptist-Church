@@ -23,7 +23,7 @@ export const siteConfig = {
   },
 
   social: {
-    facebook: "https://www.facebook.com/Hardeetown/",
+    facebook: "https://www.facebook.com/profile.php?id=61556940396902",
     youtube: "https://www.youtube.com/channel/UClz59vJ7Pxt-RQuzWhtM99Q",
     instagram: "https://www.instagram.com/hbc_chiefland/",
   },
