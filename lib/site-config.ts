@@ -24,7 +24,7 @@ export const siteConfig = {
 
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61556940396902",
-    youtube: "https://www.youtube.com/channel/UClz59vJ7Pxt-RQuzWhtM99Q",
+    youtube: "https://www.youtube.com/channel/UCMtbl4zKNOx0UBMpxeVzvHw",
     instagram: "https://www.instagram.com/hbc_chiefland/",
   },
 
