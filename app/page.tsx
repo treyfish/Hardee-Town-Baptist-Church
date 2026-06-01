@@ -234,7 +234,7 @@ export default function Home() {
             {[
               { title: "Children", href: "/ministries#children", desc: "Little Moments, Sunday School, and Wednesday-night AWANA — where kids learn who Jesus is, and that they're loved.", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80&auto=format&fit=crop" },
               { title: "Youth — The Harbor", href: "/ministries#youth", desc: "Anchored in faith, driven by purpose. A safe haven where students encounter God's love and build unshakable faith.", img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80&auto=format&fit=crop" },
-              { title: "Adults", href: "/ministries#adults", desc: "Men's and Women's ministries — breakfast, fellowship, missions, and serving our church and community together.", img: "https://images.unsplash.com/photo-1543269664-647b9ba6a410?w=600&q=80&auto=format&fit=crop" },
+              { title: "Adults", href: "/ministries#adults", desc: "Men's, Women's, and Senior Adult ministries — breakfast, fellowship, missions, and serving our church and community together.", img: "https://images.unsplash.com/photo-1543269664-647b9ba6a410?w=600&q=80&auto=format&fit=crop" },
               { title: "UPWARD Sports", href: "/ministries#upward", desc: "Basketball and cheer leagues for kids — building character on and off the court.", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=80&auto=format&fit=crop" },
             ].map((m) => (
               <a key={m.title} href={m.href} className="group block bg-cream-2 rounded-xl overflow-hidden lift">

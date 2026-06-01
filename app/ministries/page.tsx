@@ -112,7 +112,7 @@ export default function MinistriesPage() {
             <h2 className="font-display text-3xl md:text-4xl leading-tight">Adult Ministries</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-cream-2 rounded-2xl p-7 border border-burgundy/10 fade-up">
               <h3 className="font-display text-2xl mb-4">Men&apos;s Ministry</h3>
               <p className="text-warm-gray leading-relaxed mb-4">
@@ -130,6 +130,16 @@ export default function MinistriesPage() {
               </p>
               <p className="text-warm-gray leading-relaxed">
                 A heart for <span className="text-ink font-medium">missions</span> runs through everything we do — praying daily for SBC missionaries here in North America and around the world, and giving through the Lottie Moon Christmas Offering and the Annie Armstrong Easter Offering.
+              </p>
+            </div>
+
+            <div className="bg-cream-2 rounded-2xl p-7 border border-burgundy/10 fade-up">
+              <h3 className="font-display text-2xl mb-4">Senior Adults</h3>
+              <p className="text-warm-gray leading-relaxed mb-4">
+                Our senior adults meet monthly for fun, food, and fellowship. We pick a different restaurant to try out each month. Also, every other month we visit a different attraction somewhere in the north-central Florida area, and we eat lunch along the way.
+              </p>
+              <p className="text-warm-gray leading-relaxed">
+                Got an idea for a place you&apos;d like to visit, or a restaurant you&apos;ve always wanted to try but never got around to? Give us a call, then join us on the <span className="text-ink font-medium">fourth Thursday of each month</span>. We usually leave the church around 10:00 AM and return the same day by mid-afternoon. There&apos;s always room for one more!
               </p>
             </div>
           </div>
