@@ -41,7 +41,18 @@ _Last updated: 2026-06-01_
 
 ---
 
-## 4. Resolved / decisions made
+## 4. Future build ideas (parked)
+
+- **"What to Expect on Sunday" section/page** — the homepage "What to expect on
+  Sunday" link currently points to the About page. We may build a dedicated
+  section just for first-time visitors (parking, greeters, no dress code, where
+  kids go, how long the service runs, etc.).
+- **Homepage About-section photo** — currently a single church-appropriate stock
+  placeholder; replace with a real church/congregation photo when available.
+
+---
+
+## 5. Resolved / decisions made
 
 - Facebook, YouTube, and Instagram links corrected to the real church accounts.
 - Color scheme changed to match the church logo (blue + gold on a warm cream base).

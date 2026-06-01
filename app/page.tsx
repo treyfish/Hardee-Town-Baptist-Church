@@ -70,21 +70,17 @@ export default function Home() {
             <p className="text-warm-gray text-lg leading-relaxed mb-9">
               No dress code. No pressure. Just real people learning to follow Jesus together — and we&apos;d love for you to join us.
             </p>
-            <a href="#visit" className="inline-flex items-center gap-2 text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:gap-3 transition-all">
+            {/* TODO: We may build a dedicated "What to Expect on Sunday" section/page
+                later (parking, greeters, dress, kids, service flow). For now this
+                links to the About page. */}
+            <a href="/about" className="inline-flex items-center gap-2 text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:gap-3 transition-all">
               What to expect on Sunday <span>→</span>
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-3 fade-up">
-            <div className="relative">
-              <span className="placeholder-badge">Placeholder</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop" alt="" className="rounded-lg aspect-[3/4] object-cover w-full" />
-            </div>
-            <div className="relative mt-10">
-              <span className="placeholder-badge">Placeholder</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80&auto=format&fit=crop" alt="" className="rounded-lg aspect-[3/4] object-cover w-full" />
-            </div>
+          <div className="relative fade-up">
+            <span className="placeholder-badge">Placeholder</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=900&q=80&auto=format&fit=crop" alt="" className="rounded-2xl aspect-[4/5] object-cover w-full shadow-lg shadow-black/10" />
           </div>
         </div>
       </section>
