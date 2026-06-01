@@ -70,6 +70,29 @@ export default function MinistriesPage() {
               &ldquo;We have this hope as an anchor for the soul, firm and secure.&rdquo; — Hebrews 6:19
             </p>
           </div>
+
+          <div className="mt-10">
+            <h3 className="font-display text-2xl mb-6">H.A.R.B.O.R.</h3>
+            <div className="space-y-4">
+              {[
+                { letter: "H", title: "Held Firm in Truth", desc: "Rooted in Scripture and guided by God's Word." },
+                { letter: "A", title: "Anchored in Faith", desc: "Strengthened by worship, discipleship, and service." },
+                { letter: "R", title: "Rooted in Community", desc: "A welcoming place where students find friendship and support." },
+                { letter: "B", title: "Built for Purpose", desc: "Equipping students to follow Christ in all areas of life." },
+                { letter: "O", title: "Overflowing with Love", desc: "Showing God's love through action and outreach." },
+                { letter: "R", title: "Resilient in the Storms", desc: "Trusting in God's strength through every challenge." },
+              ].map((h, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="font-display text-3xl md:text-4xl text-gold leading-none w-8 shrink-0">{h.letter}</div>
+                  <div>
+                    <div className="font-semibold text-ink">{h.title}</div>
+                    <div className="text-warm-gray">{h.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <Schedule
             items={[
               { label: "Wednesday Night", value: "6:30 – 8:00 PM — dinner provided, then Bible study, fun & fellowship" },
