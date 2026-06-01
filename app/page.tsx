@@ -1,7 +1,9 @@
+import Link from "next/link";
 import FadeInit from "./fade-init";
-import GoogleCalendar from "./google-calendar";
 import RecentSermons from "./recent-sermons";
-import { siteConfig } from "@/lib/site-config";
+import EventCard from "./event-card";
+import { staff } from "@/lib/staff";
+import { events } from "@/lib/events";
 
 export default function Home() {
   return (
@@ -103,46 +105,12 @@ export default function Home() {
               <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-3 font-semibold">What&apos;s happening</div>
               <h2 className="font-display text-4xl md:text-5xl leading-tight">Upcoming at Hardeetown</h2>
             </div>
-            <a href="#calendar" className="text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:opacity-70 transition self-start md:self-auto">Full Calendar →</a>
+            <a href="/events" className="text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:opacity-70 transition self-start md:self-auto">All Events &amp; Calendar →</a>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { mon: "Jun", day: "8", when: "Mon–Fri · 6:00 PM", title: "Vacation Bible School", desc: "A week of music, games, and Gospel for kids K–6. Registration opens May 15.", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80&auto=format&fit=crop" },
-              { mon: "Jun", day: "15", when: "Sunday · 10:45 AM", title: "Father's Day Service", desc: "Honoring the dads, grandads, and father figures in our church family.", img: "https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800&q=80&auto=format&fit=crop" },
-              { mon: "Jul", day: "4", when: "Friday · 6:00 PM", title: "Church Family Cookout", desc: "Burgers, fellowship, and fireworks. Bring a side dish and your favorite folding chair.", img: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80&auto=format&fit=crop" },
-            ].map((e) => (
-              <article key={e.title} className="bg-cream-2 rounded-xl overflow-hidden lift">
-                <div className="relative h-44 overflow-hidden">
-                  <span className="placeholder-badge">Placeholder</span>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={e.img} className="w-full h-full object-cover" alt="" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="bg-burgundy text-cream rounded-md px-3 py-2 text-center min-w-[58px]">
-                      <div className="text-[10px] uppercase tracking-widest font-semibold">{e.mon}</div>
-                      <div className="font-display text-xl leading-none">{e.day}</div>
-                    </div>
-                    <div className="text-warm-gray text-sm">{e.when}</div>
-                  </div>
-                  <h3 className="font-display text-xl mb-2">{e.title}</h3>
-                  <p className="text-warm-gray text-sm leading-relaxed">{e.desc}</p>
-                </div>
-              </article>
+          <div className="grid md:grid-cols-3 gap-6 fade-up">
+            {events.map((e) => (
+              <EventCard key={e.title} event={e} />
             ))}
-          </div>
-
-          <div id="calendar" className="mt-20 scroll-mt-24 fade-up">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 gap-4">
-              <div>
-                <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-3 font-semibold">Church calendar</div>
-                <h3 className="font-display text-3xl md:text-4xl leading-tight">Everything in one place</h3>
-              </div>
-              <p className="text-warm-gray text-sm max-w-sm md:text-right">
-                Services, studies, and events — kept up to date automatically. Add it to your own calendar with one tap.
-              </p>
-            </div>
-            <GoogleCalendar />
           </div>
         </div>
       </section>
@@ -164,56 +132,23 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-16 md:space-y-24">
-            {[
-              {
-                name: "Rev. Tony Parker",
-                role: "Senior Pastor",
-                img: "/staff/tony-parker.jpg",
-                bio: [
-                  "Bro. Tony graduated from The Baptist College of Florida in 1989. He accepted Jesus Christ as his Lord and Savior at the age of twelve, and God called him into the ministry shortly after he graduated from Eastside High School in Gainesville. Since then he has served in many capacities within the church — Youth Minister, Associate Pastor, Interim Pastor, teacher, and more.",
-                  "Bro. Tony has a burning passion to love and guide people and to see their lives changed by the power of God. He and his wife, Debbie, have four grown children and several grandchildren. Besides being Bro. Tony's soulmate and a fantastic lady of God, Debbie is a dedicated police officer and a great asset to HBC.",
-                ],
-                note: "We are so blessed to have Bro. Tony as our pastor!",
-              },
-              {
-                name: "Charles Brock",
-                role: "Worship Minister",
-                img: "/staff/charles-brock.jpg",
-                bio: [
-                  "Our worship leader, Charles Brock, is a life-long resident of Levy County. Charles married his wife, Donna, in 1983, and they have two grown children, Chad and Maegan, who are both teachers.",
-                  "Charles graduated from Trenton High School in 1978. He has been leading worship since he was a youth and served several churches in the area before coming to Hardeetown. He was ordained as a deacon in 1990.",
-                ],
-                note: "",
-              },
-              {
-                name: "Rev. Kevin Amerson",
-                role: "Associate Pastor · Student Ministry",
-                img: "/staff/kevin-amerson.jpg",
-                bio: [
-                  "Kevin Amerson serves as our Associate Pastor of Student Ministry. A graduate of Colorado Christian University with a focus on apologetic studies, Kevin is deeply passionate about guiding young people in their faith — equipping students with biblical truth and nurturing their growth into strong disciples of Christ.",
-                  "Alongside his wife, Leslie, Kevin brings a heart for ministry and a dedication to serving the next generation. His leadership, wisdom, and commitment to the gospel are a tremendous blessing to our church and community.",
-                ],
-                note: "",
-              },
-            ].map((p, i) => (
-              <div key={p.name} className="grid md:grid-cols-5 gap-8 md:gap-12 items-center fade-up">
-                <div className={`md:col-span-2 ${i % 2 ? "md:order-2" : ""}`}>
-                  <div className="relative aspect-[4/5] max-w-sm mx-auto overflow-hidden rounded-2xl ring-1 ring-cream/15 shadow-xl shadow-black/30">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top" />
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto fade-up">
+            {staff.map((p) => (
+              <div key={p.name} className="text-center">
+                <div className="relative aspect-[4/5] max-w-[210px] mx-auto overflow-hidden rounded-2xl ring-1 ring-cream/15 shadow-lg shadow-black/30 mb-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top" />
                 </div>
-                <div className={`md:col-span-3 ${i % 2 ? "md:order-1" : ""}`}>
-                  <h3 className="font-display text-3xl md:text-4xl mb-1">{p.name}</h3>
-                  <div className="text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-5">{p.role}</div>
-                  {p.bio.map((para, j) => (
-                    <p key={j} className="text-cream/75 leading-relaxed mb-4">{para}</p>
-                  ))}
-                  {p.note && <p className="text-gold-light font-display text-lg mt-2">{p.note}</p>}
-                </div>
+                <div className="font-display text-xl">{p.name}</div>
+                <div className="text-gold text-xs uppercase tracking-[0.2em] mt-1">{p.role}</div>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-12 fade-up">
+            <Link href="/about#leadership" className="inline-block border-2 border-cream/40 text-cream px-7 py-3 rounded-full font-semibold hover:bg-cream hover:text-ink transition">
+              Meet our leadership →
+            </Link>
           </div>
         </div>
       </section>
@@ -269,46 +204,15 @@ export default function Home() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?w=1920&q=80&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="" />
         <div className="absolute inset-0 bg-burgundy/85"></div>
-        <div className="relative max-w-5xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto fade-up">
-            <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Generosity</div>
-            <h2 className="font-display text-4xl md:text-5xl mb-6 leading-tight">Give to the Lord&apos;s work.</h2>
-            <p className="text-cream/85 text-lg leading-relaxed mb-4">
-              Tithing is a test of our faith. Do we trust God to bless our increase by returning to Him the 10% that He requires of us? If we are God&apos;s children, all that we have is already His.
-            </p>
-            <p className="font-display text-gold-light text-2xl">Tithing is an act of worship!</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-5 mt-12 fade-up">
-            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm flex flex-col">
-              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give Online</div>
-              {siteConfig.givingUrl ? (
-                <a href={siteConfig.givingUrl} target="_blank" rel="noopener" className="mt-auto inline-block bg-cream text-burgundy px-6 py-3 rounded-full font-semibold hover:bg-gold hover:text-ink transition">Give Now</a>
-              ) : (
-                <p className="text-cream/80">Online giving is coming soon.</p>
-              )}
-            </div>
-            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm">
-              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give in Person</div>
-              <p className="text-cream/85 leading-relaxed">
-                Join us for worship on Sundays at <span className="font-semibold text-cream">10:45 AM</span> and place your gift in the offering.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm">
-              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give by Mail</div>
-              <p className="text-cream/85 leading-relaxed">
-                Hardeetown Baptist Church
-                <br />
-                1716 NW 14th Street
-                <br />
-                Chiefland, FL 32626
-              </p>
-            </div>
-          </div>
-
-          <p className="text-cream/70 text-sm leading-relaxed max-w-3xl mx-auto text-center mt-10 fade-up">
-            All donations and tithes are credited to the general operating budget of the church. If you&apos;d like to give to a specific ministry, please contact the church office so your wishes can be shared with our stewardship team. We encourage undesignated contributions so the church can support all of our ministries equally. (In situations of financial emergency, the church reserves the right to redistribute designated offerings as necessary.)
+        <div className="relative max-w-3xl mx-auto text-center fade-up">
+          <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Generosity</div>
+          <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight">Give to the Lord&apos;s work.</h2>
+          <p className="text-cream/85 text-lg leading-relaxed mb-8">
+            Tithing is an act of worship. Your generosity supports the ministry of Hardeetown — here at home and around the world.
           </p>
+          <Link href="/give" className="bg-cream text-burgundy px-7 py-3.5 rounded-full font-semibold hover:bg-gold hover:text-ink transition inline-block">
+            Ways to Give
+          </Link>
         </div>
       </section>
 

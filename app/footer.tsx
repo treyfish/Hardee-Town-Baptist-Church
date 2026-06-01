@@ -56,8 +56,9 @@ export default function Footer() {
           <ul className="text-cream/80 text-sm space-y-2">
             <li><Link href="/about" className="hover:text-cream transition">About</Link></li>
             <li><Link href="/ministries" className="hover:text-cream transition">Ministries</Link></li>
+            <li><Link href="/events" className="hover:text-cream transition">Events</Link></li>
             <li><Link href="/#sermons" className="hover:text-cream transition">Sermons</Link></li>
-            <li><Link href="/#give" className="hover:text-cream transition">Give</Link></li>
+            <li><Link href="/give" className="hover:text-cream transition">Give</Link></li>
           </ul>
         </div>
       </div>

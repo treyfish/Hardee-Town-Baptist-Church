@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FadeInit from "../fade-init";
+import { staff } from "@/lib/staff";
 
 export const metadata: Metadata = {
   title: "About · Hardeetown Baptist Church",
@@ -30,6 +31,35 @@ export default function AboutPage() {
             <p>
               We also believe that Jesus died on the cross to pay for our sins and is now physically resurrected, seated on His throne at the right hand of God the Father. He will gather His church in the rapture prior to the Tribulation and then physically return with the church at the end of the Great Tribulation to execute judgment on the nations and establish His millennial reign. Following the final judgment, God will create a new heaven and a new earth, untainted by sin, where the saints of all ages will live together with God in His holy city, the New Jerusalem.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="leadership" className="scroll-mt-24 py-20 md:py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 fade-up">
+            <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-4 font-semibold">Our leadership</div>
+            <h2 className="font-display text-3xl md:text-5xl leading-tight">Meet Our Staff</h2>
+          </div>
+          <div className="space-y-16 md:space-y-24">
+            {staff.map((p, i) => (
+              <div key={p.name} className="grid md:grid-cols-5 gap-8 md:gap-12 items-center fade-up">
+                <div className={`md:col-span-2 ${i % 2 ? "md:order-2" : ""}`}>
+                  <div className="relative aspect-[4/5] max-w-sm mx-auto overflow-hidden rounded-2xl ring-1 ring-burgundy/10 shadow-xl shadow-black/10">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top" />
+                  </div>
+                </div>
+                <div className={`md:col-span-3 ${i % 2 ? "md:order-1" : ""}`}>
+                  <h3 className="font-display text-3xl md:text-4xl mb-1">{p.name}</h3>
+                  <div className="text-burgundy text-xs uppercase tracking-[0.2em] font-semibold mb-5">{p.role}</div>
+                  {p.bio.map((para, j) => (
+                    <p key={j} className="text-warm-gray leading-relaxed mb-4">{para}</p>
+                  ))}
+                  {p.note && <p className="text-burgundy font-display text-lg mt-2">{p.note}</p>}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
