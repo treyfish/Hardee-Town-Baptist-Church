@@ -9,34 +9,6 @@ export default function Home() {
     : { href: giveHref };
   return (
     <>
-      <div className="bg-ink text-cream text-center py-2 text-[11px] tracking-[0.2em] font-medium">
-        DEMO MOCKUP · PLACEHOLDER PHOTOS &amp; SAMPLE COPY · v1
-      </div>
-
-      <nav className="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-burgundy/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Hardeetown Baptist Church logo" className="h-11 w-auto" />
-            <div className="leading-tight">
-              <div className="font-display font-semibold text-[17px]">Hardeetown</div>
-              <div className="text-[10px] uppercase tracking-[0.22em] text-warm-gray">Baptist Church</div>
-            </div>
-          </a>
-          <div className="hidden md:flex items-center gap-7 text-sm font-medium text-ink-2">
-            <a href="#about" className="ul-grow hover:text-burgundy transition">About</a>
-            <a href="#ministries" className="ul-grow hover:text-burgundy transition">Ministries</a>
-            <a href="#events" className="ul-grow hover:text-burgundy transition">Events</a>
-            <a href="#sermons" className="ul-grow hover:text-burgundy transition">Sermons</a>
-            <a href="#give" className="ul-grow hover:text-burgundy transition">Give</a>
-            <a href="#contact" className="ul-grow hover:text-burgundy transition">Contact</a>
-          </div>
-          <a href="#visit" className="bg-burgundy text-cream px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-ink transition shadow-sm">
-            Plan a Visit
-          </a>
-        </div>
-      </nav>
-
       <section id="top" className="relative h-[88vh] min-h-[620px] flex items-center justify-center text-cream overflow-hidden">
         <span className="placeholder-badge">Placeholder photo</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -264,12 +236,12 @@ export default function Home() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 fade-up">
             {[
-              { title: "Children", desc: "Safe, engaging environments where kids learn who Jesus is — and that they're loved.", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80&auto=format&fit=crop" },
-              { title: "Youth", desc: "Middle and high schoolers digging into real questions and building lifelong friendships.", img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80&auto=format&fit=crop" },
-              { title: "Adults", desc: "Small groups, Bible studies, and friendships that walk with you through every season of life.", img: "https://images.unsplash.com/photo-1543269664-647b9ba6a410?w=600&q=80&auto=format&fit=crop" },
-              { title: "UPWARD Sports", desc: "Basketball and cheer leagues for kids — building character on and off the court.", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=80&auto=format&fit=crop" },
+              { title: "Children", href: "/ministries#children", desc: "Little Moments, Sunday School, and Wednesday-night AWANA — where kids learn who Jesus is, and that they're loved.", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80&auto=format&fit=crop" },
+              { title: "Youth — The Harbor", href: "/ministries#youth", desc: "Anchored in faith, driven by purpose. A safe haven where students encounter God's love and build unshakable faith.", img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80&auto=format&fit=crop" },
+              { title: "Adults", href: "/ministries#adults", desc: "Men's and Women's ministries — breakfast, fellowship, missions, and serving our church and community together.", img: "https://images.unsplash.com/photo-1543269664-647b9ba6a410?w=600&q=80&auto=format&fit=crop" },
+              { title: "UPWARD Sports", href: "/ministries#upward", desc: "Basketball and cheer leagues for kids — building character on and off the court.", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=80&auto=format&fit=crop" },
             ].map((m) => (
-              <a key={m.title} href="#visit" className="group block bg-cream-2 rounded-xl overflow-hidden lift">
+              <a key={m.title} href={m.href} className="group block bg-cream-2 rounded-xl overflow-hidden lift">
                 <div className="relative h-48 overflow-hidden">
                   <span className="placeholder-badge">Placeholder</span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -390,68 +362,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <footer className="bg-ink text-cream pt-16 pb-8 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 mb-12">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Hardeetown Baptist Church logo" className="h-12 w-auto" />
-              <div>
-                <div className="font-display font-semibold text-lg">Hardeetown</div>
-                <div className="text-[10px] uppercase tracking-[0.22em] text-cream/60">Baptist Church</div>
-              </div>
-            </div>
-            <p className="text-cream/70 max-w-md leading-relaxed mb-6">
-              A family of believers in Chiefland, Florida, growing in Christ and reaching our community with the hope of the Gospel.
-            </p>
-            <div className="flex gap-3">
-              <a href="https://www.facebook.com/profile.php?id=61556940396902" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="Facebook">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z" />
-                </svg>
-              </a>
-              <a href="https://www.youtube.com/channel/UCMtbl4zKNOx0UBMpxeVzvHw" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="YouTube">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-              </a>
-              <a href="https://www.instagram.com/hbc_chiefland/" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="Instagram">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.247 2.242 1.309 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.309 3.608-.975.975-2.242 1.247-3.608 1.309-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.309-.975-.975-1.247-2.242-1.309-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.309-3.608.975-.974 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0 1.802c-3.15 0-3.523.012-4.767.069-1.024.047-1.58.218-1.95.362-.49.19-.84.418-1.207.785a3.25 3.25 0 0 0-.785 1.207c-.144.37-.315.926-.362 1.95-.057 1.244-.069 1.617-.069 4.767s.012 3.523.069 4.767c.047 1.024.218 1.58.362 1.95.19.49.418.84.785 1.207.367.367.717.595 1.207.785.37.144.926.315 1.95.362 1.244.057 1.617.069 4.767.069s3.523-.012 4.767-.069c1.024-.047 1.58-.218 1.95-.362.49-.19.84-.418 1.207-.785.367-.367.595-.717.785-1.207.144-.37.315-.926.362-1.95.057-1.244.069-1.617.069-4.767s-.012-3.523-.069-4.767c-.047-1.024-.218-1.58-.362-1.95a3.25 3.25 0 0 0-.785-1.207 3.25 3.25 0 0 0-1.207-.785c-.37-.144-.926-.315-1.95-.362-1.244-.057-1.617-.069-4.767-.069zm0 3.063a5.972 5.972 0 1 0 0 11.944 5.972 5.972 0 0 0 0-11.944zm0 9.852a3.88 3.88 0 1 1 0-7.76 3.88 3.88 0 0 1 0 7.76zm7.605-10.087a1.396 1.396 0 1 1-2.792 0 1.396 1.396 0 0 1 2.792 0z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-4">Visit</div>
-            <div className="text-cream/80 leading-relaxed text-sm">
-              1716 NW 14th Street
-              <br />
-              Chiefland, Florida 32626
-              <br />
-              <a href="tel:3524934523" className="hover:text-cream transition">(352) 493-4523</a>
-            </div>
-          </div>
-          <div>
-            <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-4">Service Times</div>
-            <div className="text-cream/80 leading-relaxed text-sm">
-              Sun · 10:45 AM &amp; 6:00 PM
-              <br />
-              Wed · 6:00 PM
-            </div>
-            <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mt-6 mb-4">Quick Links</div>
-            <ul className="text-cream/80 text-sm space-y-2">
-              <li><a href="#ministries" className="hover:text-cream transition">Ministries</a></li>
-              <li><a href="#sermons" className="hover:text-cream transition">Sermons</a></li>
-              <li><a href="#give" className="hover:text-cream transition">Give</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-cream/10 pt-6 text-center text-cream/50 text-xs">
-          © 2026 Hardeetown Baptist Church · Built with care in Chiefland, FL
-        </div>
-      </footer>
 
       <FadeInit />
     </>
