@@ -128,7 +128,7 @@ export default function MinistriesPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-cream-2 rounded-2xl overflow-hidden border border-burgundy/10 fade-up">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/ministries/mens-ministry.jpg" alt="Men's Ministry fellowship" className="w-full h-52 object-cover" />
+              <img src="/ministries/mens-ministry.jpg" alt="Men's Ministry fellowship" className="w-full h-auto" />
               <div className="p-7">
                 <h3 className="font-display text-2xl mb-4">Men&apos;s Ministry</h3>
                 <p className="text-warm-gray leading-relaxed mb-4">
@@ -142,7 +142,7 @@ export default function MinistriesPage() {
 
             <div className="bg-cream-2 rounded-2xl overflow-hidden border border-burgundy/10 fade-up">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/ministries/senior-adults.jpg" alt="Senior Adults group outing" className="w-full h-52 object-cover" />
+              <img src="/ministries/senior-adults.jpg" alt="Senior Adults group outing" className="w-full h-auto" />
               <div className="p-7">
                 <h3 className="font-display text-2xl mb-4">Senior Adults</h3>
                 <p className="text-warm-gray leading-relaxed mb-4">
@@ -155,10 +155,9 @@ export default function MinistriesPage() {
             </div>
           </div>
 
-          <div className="bg-cream-2 rounded-2xl overflow-hidden border border-burgundy/10 fade-up">
+          <div className="bg-cream-2 rounded-2xl p-7 md:p-10 border border-burgundy/10 fade-up">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/ministries/womens-ministry.jpg" alt="Women's Ministry gathering" className="w-full h-56 object-cover" />
-            <div className="p-7 md:p-10">
+            <img src="/ministries/womens-ministry.jpg" alt="Women's Ministry gathering" className="w-full max-w-lg mx-auto h-auto rounded-xl mb-8" />
             <h3 className="font-display text-2xl mb-4">Women&apos;s Ministry</h3>
             <p className="text-warm-gray leading-relaxed mb-3">
               Hardeetown Baptist Church Women&apos;s Ministry is a multi-faceted group, serving in many areas of the church&apos;s ministries. Our goal is to demonstrate Christ&apos;s love and to reach new people for Christ, in accordance with Acts 1:8.
@@ -177,7 +176,6 @@ export default function MinistriesPage() {
                   <p className="text-warm-gray leading-relaxed">{f.d}</p>
                 </div>
               ))}
-            </div>
             </div>
           </div>
         </div>
