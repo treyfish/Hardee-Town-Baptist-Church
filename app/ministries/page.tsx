@@ -112,7 +112,7 @@ export default function MinistriesPage() {
             <h2 className="font-display text-3xl md:text-4xl leading-tight">Adult Ministries</h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-cream-2 rounded-2xl p-7 border border-burgundy/10 fade-up">
               <h3 className="font-display text-2xl mb-4">Men&apos;s Ministry</h3>
               <p className="text-warm-gray leading-relaxed mb-4">
@@ -124,16 +124,6 @@ export default function MinistriesPage() {
             </div>
 
             <div className="bg-cream-2 rounded-2xl p-7 border border-burgundy/10 fade-up">
-              <h3 className="font-display text-2xl mb-4">Women&apos;s Ministry</h3>
-              <p className="text-warm-gray leading-relaxed mb-4">
-                Our Women&apos;s Ministry is a multi-faceted group serving in many areas of the church. Our goal is to demonstrate Christ&apos;s love and reach new people for Christ, in accordance with Acts 1:8.
-              </p>
-              <p className="text-warm-gray leading-relaxed">
-                A heart for <span className="text-ink font-medium">missions</span> runs through everything we do — praying daily for SBC missionaries here in North America and around the world, and giving through the Lottie Moon Christmas Offering and the Annie Armstrong Easter Offering.
-              </p>
-            </div>
-
-            <div className="bg-cream-2 rounded-2xl p-7 border border-burgundy/10 fade-up">
               <h3 className="font-display text-2xl mb-4">Senior Adults</h3>
               <p className="text-warm-gray leading-relaxed mb-4">
                 Our senior adults meet monthly for fun, food, and fellowship. We pick a different restaurant to try out each month. Also, every other month we visit a different attraction somewhere in the north-central Florida area, and we eat lunch along the way.
@@ -141,6 +131,28 @@ export default function MinistriesPage() {
               <p className="text-warm-gray leading-relaxed">
                 Got an idea for a place you&apos;d like to visit, or a restaurant you&apos;ve always wanted to try but never got around to? Give us a call, then join us on the <span className="text-ink font-medium">fourth Thursday of each month</span>. We usually leave the church around 10:00 AM and return the same day by mid-afternoon. There&apos;s always room for one more!
               </p>
+            </div>
+          </div>
+
+          <div className="bg-cream-2 rounded-2xl p-7 md:p-10 border border-burgundy/10 fade-up">
+            <h3 className="font-display text-2xl mb-4">Women&apos;s Ministry</h3>
+            <p className="text-warm-gray leading-relaxed mb-3">
+              Hardeetown Baptist Church Women&apos;s Ministry is a multi-faceted group, serving in many areas of the church&apos;s ministries. Our goal is to demonstrate Christ&apos;s love and to reach new people for Christ, in accordance with Acts 1:8.
+            </p>
+            <p className="text-warm-gray leading-relaxed mb-8">Here are the basics of what HBC Women&apos;s Ministry involves:</p>
+            <div className="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+              {[
+                { t: "Missions", d: "Supporting SBC missionaries in prayer — praying daily for missionaries representing our denomination both internationally and in North America — and financially through the Southern Baptist Lottie Moon Christmas Offering and Annie Armstrong Easter Offering." },
+                { t: "Local & International Ministries", d: "Operation Christmas Child (Samaritan's Purse) and the Harmony Pregnancy Center." },
+                { t: "Bible Study & Discipleship", d: "Strengthening our relationship with Christ through Bible study, and developing mentoring relationships." },
+                { t: "Caring Ministry", d: "Keeping in contact with our nursing-home residents, shut-ins, the sick, and temporary residents through cards, visits, and sharing the newsletter." },
+                { t: "Fellowship", d: "Providing time for our group to encourage one another and grow together." },
+              ].map((f) => (
+                <div key={f.t}>
+                  <div className="text-burgundy text-xs uppercase tracking-widest font-semibold mb-1.5">{f.t}</div>
+                  <p className="text-warm-gray leading-relaxed">{f.d}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
