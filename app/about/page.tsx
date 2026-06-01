@@ -10,18 +10,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="relative h-[44vh] min-h-[340px] overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/church-building.jpg"
-          alt="Hardeetown Baptist Church building in Chiefland, Florida"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-ink/60"></div>
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-cream px-6">
-          <div className="uppercase tracking-[0.3em] text-[11px] text-gold mb-4 font-semibold">About our church</div>
-          <h1 className="font-display text-4xl md:text-6xl leading-tight">Welcome to Hardeetown</h1>
-        </div>
+      <section className="bg-ink text-cream py-24 md:py-32 px-6 text-center">
+        <div className="uppercase tracking-[0.3em] text-[11px] text-gold mb-4 font-semibold">About our church</div>
+        <h1 className="font-display text-4xl md:text-6xl leading-tight">Welcome to Hardeetown</h1>
       </section>
 
       <section className="py-20 md:py-28 px-6">
