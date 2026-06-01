@@ -28,6 +28,7 @@ _Last updated: 2026-06-01_
 - ~~**Youth "H.A.R.B.O.R." acronym**~~ — ✅ Resolved. Full acronym provided and added to the Youth page.
 - **Staff** — confirmed 3: Rev. Tony Parker (Senior Pastor), Charles Brock (Worship Minister), Rev. Kevin Amerson (Associate Pastor – Student Ministry). ❓ Any deacons or other staff/leaders to add?
 - **Men's breakfast** — listed as "currently the first Sunday of each month at 8:00 AM." ❓ Still accurate?
+- **K'Nex Groups** — added a placeholder section with the preferred "Groups" logo and "more information coming soon." ❓ What is K'Nex / what should the description say? Confirm which logo to use long-term (the people-circle "Groups" one vs. the cross one).
 
 ---
 
