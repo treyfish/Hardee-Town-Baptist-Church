@@ -1,5 +1,6 @@
 import FadeInit from "./fade-init";
 import GoogleCalendar from "./google-calendar";
+import RecentSermons from "./recent-sermons";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Home() {
@@ -263,29 +264,7 @@ export default function Home() {
             </div>
             <a href="https://www.youtube.com/channel/UCMtbl4zKNOx0UBMpxeVzvHw" target="_blank" rel="noopener" className="text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:opacity-70 transition self-start md:self-auto">Full Sermon Archive →</a>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 fade-up">
-            {[
-              { date: "May 24, 2026 · Pastor [Name]", title: "The Greatest Blessing", desc: "A look at Ephesians 1 and what it means to be chosen, redeemed, and sealed.", img: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&q=80&auto=format&fit=crop" },
-              { date: "May 17, 2026 · Pastor [Name]", title: "Don't Miss the Greater Sign", desc: "Jesus pointed past the miracles to something bigger. Are we looking at it?", img: "https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800&q=80&auto=format&fit=crop" },
-              { date: "May 10, 2026 · Pastor [Name]", title: "True Wisdom", desc: "A Baccalaureate message for our graduates — and anyone navigating a new chapter.", img: "https://images.unsplash.com/photo-1571907483086-3e4a4d3d0e62?w=800&q=80&auto=format&fit=crop" },
-            ].map((s) => (
-              <article key={s.title} className="group cursor-pointer">
-                <div className="relative aspect-video overflow-hidden rounded-lg mb-4 bg-ink">
-                  <span className="placeholder-badge">Placeholder</span>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.img} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="" />
-                  <div className="absolute inset-0 bg-ink/30 group-hover:bg-ink/10 transition flex items-center justify-center">
-                    <div className="w-14 h-14 bg-cream/95 rounded-full flex items-center justify-center">
-                      <div className="w-0 h-0 border-l-[14px] border-l-burgundy border-y-[10px] border-y-transparent ml-1"></div>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-warm-gray text-xs uppercase tracking-widest mb-2">{s.date}</div>
-                <h3 className="font-display text-xl mb-2 group-hover:text-burgundy transition">{s.title}</h3>
-                <p className="text-warm-gray text-sm leading-relaxed">{s.desc}</p>
-              </article>
-            ))}
-          </div>
+          <RecentSermons />
         </div>
       </section>
 

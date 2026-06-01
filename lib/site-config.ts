@@ -28,6 +28,9 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/hbc_chiefland/",
   },
 
+  // YouTube channel ID — used to auto-pull the latest sermon videos.
+  youtubeChannelId: "UCMtbl4zKNOx0UBMpxeVzvHw",
+
   // ── Fill these in when ready ───────────────────────────────
   // Online giving page (Tithe.ly / PushPay / PayPal / etc.).
   // Leave "" and the Give buttons gracefully point at contact info instead.
