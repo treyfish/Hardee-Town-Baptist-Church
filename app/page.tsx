@@ -1,37 +1,11 @@
 import FadeInit from "./fade-init";
+import GoogleCalendar from "./google-calendar";
+import RecentSermons from "./recent-sermons";
+import { siteConfig } from "@/lib/site-config";
 
 export default function Home() {
   return (
     <>
-      <div className="bg-ink text-cream text-center py-2 text-[11px] tracking-[0.2em] font-medium">
-        DEMO MOCKUP · PLACEHOLDER PHOTOS &amp; SAMPLE COPY · v1
-      </div>
-
-      <nav className="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-burgundy/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-3">
-            <div className="w-11 h-11 bg-burgundy text-cream rounded-full flex items-center justify-center font-display font-bold text-lg shadow-sm">
-              H
-            </div>
-            <div className="leading-tight">
-              <div className="font-display font-semibold text-[17px]">Hardeetown</div>
-              <div className="text-[10px] uppercase tracking-[0.22em] text-warm-gray">Baptist Church</div>
-            </div>
-          </a>
-          <div className="hidden md:flex items-center gap-7 text-sm font-medium text-ink-2">
-            <a href="#about" className="ul-grow hover:text-burgundy transition">About</a>
-            <a href="#ministries" className="ul-grow hover:text-burgundy transition">Ministries</a>
-            <a href="#events" className="ul-grow hover:text-burgundy transition">Events</a>
-            <a href="#sermons" className="ul-grow hover:text-burgundy transition">Sermons</a>
-            <a href="#give" className="ul-grow hover:text-burgundy transition">Give</a>
-            <a href="#contact" className="ul-grow hover:text-burgundy transition">Contact</a>
-          </div>
-          <a href="#visit" className="bg-burgundy text-cream px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-ink transition shadow-sm">
-            Plan a Visit
-          </a>
-        </div>
-      </nav>
-
       <section id="top" className="relative h-[88vh] min-h-[620px] flex items-center justify-center text-cream overflow-hidden">
         <span className="placeholder-badge">Placeholder photo</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -64,17 +38,17 @@ export default function Home() {
           <div>
             <div className="text-gold text-[10px] uppercase tracking-[0.25em] mb-2 font-semibold">Sunday Morning</div>
             <div className="font-display text-xl">Worship · 10:45 AM</div>
-            <div className="text-cream/60 text-xs mt-1">Bible Study for all ages · 9:30 AM</div>
+            <div className="text-cream/60 text-xs mt-1">Morning service</div>
           </div>
           <div className="border-y md:border-y-0 md:border-x border-cream/15 py-5 md:py-0">
             <div className="text-gold text-[10px] uppercase tracking-[0.25em] mb-2 font-semibold">Sunday Evening</div>
             <div className="font-display text-xl">Worship · 6:00 PM</div>
-            <div className="text-cream/60 text-xs mt-1">Every Sunday night</div>
+            <div className="text-cream/60 text-xs mt-1">Evening service</div>
           </div>
           <div>
             <div className="text-gold text-[10px] uppercase tracking-[0.25em] mb-2 font-semibold">Wednesday Night</div>
-            <div className="font-display text-xl">Prayer · 6:00 PM</div>
-            <div className="text-cream/60 text-xs mt-1">Youth · Children · Adult Prayer</div>
+            <div className="font-display text-xl">Youth · Children · Prayer</div>
+            <div className="text-cream/60 text-xs mt-1">Wednesdays · 6:00 PM</div>
           </div>
         </div>
       </section>
@@ -93,21 +67,17 @@ export default function Home() {
             <p className="text-warm-gray text-lg leading-relaxed mb-9">
               No dress code. No pressure. Just real people learning to follow Jesus together — and we&apos;d love for you to join us.
             </p>
-            <a href="#visit" className="inline-flex items-center gap-2 text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:gap-3 transition-all">
+            {/* TODO: We may build a dedicated "What to Expect on Sunday" section/page
+                later (parking, greeters, dress, kids, service flow). For now this
+                links to the About page. */}
+            <a href="/about" className="inline-flex items-center gap-2 text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:gap-3 transition-all">
               What to expect on Sunday <span>→</span>
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-3 fade-up">
-            <div className="relative">
-              <span className="placeholder-badge">Placeholder</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop" alt="" className="rounded-lg aspect-[3/4] object-cover w-full" />
-            </div>
-            <div className="relative mt-10">
-              <span className="placeholder-badge">Placeholder</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80&auto=format&fit=crop" alt="" className="rounded-lg aspect-[3/4] object-cover w-full" />
-            </div>
+          <div className="relative fade-up">
+            <span className="placeholder-badge">Placeholder</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=900&q=80&auto=format&fit=crop" alt="" className="rounded-2xl aspect-[4/5] object-cover w-full shadow-lg shadow-black/10" />
           </div>
         </div>
       </section>
@@ -120,8 +90,8 @@ export default function Home() {
             Join us live every Sunday morning at 10:45 AM on Facebook or YouTube. Past services are archived so you can catch up anytime.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://www.facebook.com/Hardeetown/" target="_blank" rel="noopener" className="bg-burgundy text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-burgundy-dark transition inline-flex items-center gap-2 justify-center">Watch on Facebook</a>
-            <a href="https://www.youtube.com/channel/UClz59vJ7Pxt-RQuzWhtM99Q" target="_blank" rel="noopener" className="bg-ink text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-ink-2 transition inline-flex items-center gap-2 justify-center">YouTube Archive</a>
+            <a href="https://www.facebook.com/profile.php?id=61556940396902" target="_blank" rel="noopener" className="bg-burgundy text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-burgundy-dark transition inline-flex items-center gap-2 justify-center">Watch on Facebook</a>
+            <a href="https://www.youtube.com/channel/UCMtbl4zKNOx0UBMpxeVzvHw" target="_blank" rel="noopener" className="bg-ink text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-ink-2 transition inline-flex items-center gap-2 justify-center">YouTube Archive</a>
           </div>
         </div>
       </section>
@@ -161,51 +131,89 @@ export default function Home() {
               </article>
             ))}
           </div>
+
+          <div id="calendar" className="mt-20 scroll-mt-24 fade-up">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 gap-4">
+              <div>
+                <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-3 font-semibold">Church calendar</div>
+                <h3 className="font-display text-3xl md:text-4xl leading-tight">Everything in one place</h3>
+              </div>
+              <p className="text-warm-gray text-sm max-w-sm md:text-right">
+                Services, studies, and events — kept up to date automatically. Add it to your own calendar with one tap.
+              </p>
+            </div>
+            <GoogleCalendar />
+          </div>
         </div>
       </section>
 
-      <section className="bg-ink text-cream py-24 md:py-32 px-6 relative overflow-hidden">
+      <section id="staff" className="bg-ink text-cream py-24 md:py-32 px-6 relative overflow-hidden scroll-mt-24">
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, rgba(250,246,240,0.4) 1px, transparent 0)",
+            backgroundImage: "radial-gradient(circle at 1px 1px, rgba(250,247,241,0.35) 1px, transparent 0)",
             backgroundSize: "28px 28px",
           }}
         ></div>
         <div className="relative max-w-6xl mx-auto">
-          <div className="text-center mb-14 fade-up">
+          <div className="text-center mb-16 fade-up">
             <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Who we are</div>
-            <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight">Faces of Hardeetown</h2>
+            <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight">Meet Our Staff</h2>
             <p className="text-cream/70 max-w-2xl mx-auto text-lg">
-              A church is its people. These are some of the folks you&apos;ll meet when you walk through our doors.
+              A church is its people. Here are some of the folks who would love to welcome you on Sunday.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 fade-up">
+
+          <div className="space-y-16 md:space-y-24">
             {[
-              { name: "Sarah K.", role: "Children's Ministry", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80&auto=format&fit=crop" },
-              { name: "Mark T.", role: "UPWARD Sports Coach", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format&fit=crop" },
-              { name: "Jenna R.", role: "Worship Team", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80&auto=format&fit=crop" },
-              { name: "David P.", role: "Adult Bible Study", img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80&auto=format&fit=crop" },
-              { name: "Linda M.", role: "Hospitality", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop" },
-              { name: "James W.", role: "Deacon", img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&q=80&auto=format&fit=crop" },
-              { name: "Megan L.", role: "Youth Leader", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80&auto=format&fit=crop" },
-              { name: "Ruth A.", role: "Awana Volunteer", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80&auto=format&fit=crop" },
-            ].map((p) => (
-              <div key={p.name} className="text-center">
-                <div className="relative aspect-square rounded-full overflow-hidden mx-auto mb-4 border-4 border-cream/10">
-                  <span className="placeholder-badge">Placeholder</span>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.img} className="w-full h-full object-cover" alt="" />
+              {
+                name: "Rev. Tony Parker",
+                role: "Senior Pastor",
+                img: "/staff/tony-parker.jpg",
+                bio: [
+                  "Bro. Tony graduated from The Baptist College of Florida in 1989. He accepted Jesus Christ as his Lord and Savior at the age of twelve, and God called him into the ministry shortly after he graduated from Eastside High School in Gainesville. Since then he has served in many capacities within the church — Youth Minister, Associate Pastor, Interim Pastor, teacher, and more.",
+                  "Bro. Tony has a burning passion to love and guide people and to see their lives changed by the power of God. He and his wife, Debbie, have four grown children and several grandchildren. Besides being Bro. Tony's soulmate and a fantastic lady of God, Debbie is a dedicated police officer and a great asset to HBC.",
+                ],
+                note: "We are so blessed to have Bro. Tony as our pastor!",
+              },
+              {
+                name: "Charles Brock",
+                role: "Worship Minister",
+                img: "/staff/charles-brock.jpg",
+                bio: [
+                  "Our worship leader, Charles Brock, is a life-long resident of Levy County. Charles married his wife, Donna, in 1983, and they have two grown children, Chad and Maegan, who are both teachers.",
+                  "Charles graduated from Trenton High School in 1978. He has been leading worship since he was a youth and served several churches in the area before coming to Hardeetown. He was ordained as a deacon in 1990.",
+                ],
+                note: "",
+              },
+              {
+                name: "Rev. Kevin Amerson",
+                role: "Associate Pastor · Student Ministry",
+                img: "/staff/kevin-amerson.jpg",
+                bio: [
+                  "Kevin Amerson serves as our Associate Pastor of Student Ministry. A graduate of Colorado Christian University with a focus on apologetic studies, Kevin is deeply passionate about guiding young people in their faith — equipping students with biblical truth and nurturing their growth into strong disciples of Christ.",
+                  "Alongside his wife, Leslie, Kevin brings a heart for ministry and a dedication to serving the next generation. His leadership, wisdom, and commitment to the gospel are a tremendous blessing to our church and community.",
+                ],
+                note: "",
+              },
+            ].map((p, i) => (
+              <div key={p.name} className="grid md:grid-cols-5 gap-8 md:gap-12 items-center fade-up">
+                <div className={`md:col-span-2 ${i % 2 ? "md:order-2" : ""}`}>
+                  <div className="relative aspect-[4/5] max-w-sm mx-auto overflow-hidden rounded-2xl ring-1 ring-cream/15 shadow-xl shadow-black/30">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top" />
+                  </div>
                 </div>
-                <div className="font-display text-lg">{p.name}</div>
-                <div className="text-gold text-xs uppercase tracking-widest mt-1">{p.role}</div>
+                <div className={`md:col-span-3 ${i % 2 ? "md:order-1" : ""}`}>
+                  <h3 className="font-display text-3xl md:text-4xl mb-1">{p.name}</h3>
+                  <div className="text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-5">{p.role}</div>
+                  {p.bio.map((para, j) => (
+                    <p key={j} className="text-cream/75 leading-relaxed mb-4">{para}</p>
+                  ))}
+                  {p.note && <p className="text-gold-light font-display text-lg mt-2">{p.note}</p>}
+                </div>
               </div>
             ))}
-          </div>
-          <div className="text-center mt-12">
-            <p className="text-cream/60 italic max-w-xl mx-auto">
-              &ldquo;Come and see for yourself. There&apos;s a seat saved for you on Sunday.&rdquo;
-            </p>
           </div>
         </div>
       </section>
@@ -221,12 +229,12 @@ export default function Home() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 fade-up">
             {[
-              { title: "Children", desc: "Safe, engaging environments where kids learn who Jesus is — and that they're loved.", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80&auto=format&fit=crop" },
-              { title: "Youth", desc: "Middle and high schoolers digging into real questions and building lifelong friendships.", img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80&auto=format&fit=crop" },
-              { title: "Adults", desc: "Small groups, Bible studies, and friendships that walk with you through every season of life.", img: "https://images.unsplash.com/photo-1543269664-647b9ba6a410?w=600&q=80&auto=format&fit=crop" },
-              { title: "UPWARD Sports", desc: "Basketball and cheer leagues for kids — building character on and off the court.", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=80&auto=format&fit=crop" },
+              { title: "Children", href: "/ministries#children", desc: "Little Moments, Sunday School, and Wednesday-night AWANA — where kids learn who Jesus is, and that they're loved.", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80&auto=format&fit=crop" },
+              { title: "Youth — The Harbor", href: "/ministries#youth", desc: "Anchored in faith, driven by purpose. A safe haven where students encounter God's love and build unshakable faith.", img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80&auto=format&fit=crop" },
+              { title: "Adults", href: "/ministries#adults", desc: "Men's, Women's, and Senior Adult ministries — breakfast, fellowship, missions, and serving our church and community together.", img: "https://images.unsplash.com/photo-1543269664-647b9ba6a410?w=600&q=80&auto=format&fit=crop" },
+              { title: "UPWARD Sports", href: "/ministries#upward", desc: "Basketball and cheer leagues for kids — building character on and off the court.", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=80&auto=format&fit=crop" },
             ].map((m) => (
-              <a key={m.title} href="#" className="group block bg-cream-2 rounded-xl overflow-hidden lift">
+              <a key={m.title} href={m.href} className="group block bg-cream-2 rounded-xl overflow-hidden lift">
                 <div className="relative h-48 overflow-hidden">
                   <span className="placeholder-badge">Placeholder</span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -250,31 +258,9 @@ export default function Home() {
               <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-3 font-semibold">Recent messages</div>
               <h2 className="font-display text-4xl md:text-5xl leading-tight">Sundays at Hardeetown</h2>
             </div>
-            <a href="https://www.youtube.com/channel/UClz59vJ7Pxt-RQuzWhtM99Q" target="_blank" rel="noopener" className="text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:opacity-70 transition self-start md:self-auto">Full Sermon Archive →</a>
+            <a href="https://www.youtube.com/channel/UCMtbl4zKNOx0UBMpxeVzvHw" target="_blank" rel="noopener" className="text-burgundy font-semibold border-b-2 border-burgundy pb-1 hover:opacity-70 transition self-start md:self-auto">Full Sermon Archive →</a>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 fade-up">
-            {[
-              { date: "May 24, 2026 · Pastor [Name]", title: "The Greatest Blessing", desc: "A look at Ephesians 1 and what it means to be chosen, redeemed, and sealed.", img: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&q=80&auto=format&fit=crop" },
-              { date: "May 17, 2026 · Pastor [Name]", title: "Don't Miss the Greater Sign", desc: "Jesus pointed past the miracles to something bigger. Are we looking at it?", img: "https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800&q=80&auto=format&fit=crop" },
-              { date: "May 10, 2026 · Pastor [Name]", title: "True Wisdom", desc: "A Baccalaureate message for our graduates — and anyone navigating a new chapter.", img: "https://images.unsplash.com/photo-1571907483086-3e4a4d3d0e62?w=800&q=80&auto=format&fit=crop" },
-            ].map((s) => (
-              <article key={s.title} className="group cursor-pointer">
-                <div className="relative aspect-video overflow-hidden rounded-lg mb-4 bg-ink">
-                  <span className="placeholder-badge">Placeholder</span>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.img} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="" />
-                  <div className="absolute inset-0 bg-ink/30 group-hover:bg-ink/10 transition flex items-center justify-center">
-                    <div className="w-14 h-14 bg-cream/95 rounded-full flex items-center justify-center">
-                      <div className="w-0 h-0 border-l-[14px] border-l-burgundy border-y-[10px] border-y-transparent ml-1"></div>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-warm-gray text-xs uppercase tracking-widest mb-2">{s.date}</div>
-                <h3 className="font-display text-xl mb-2 group-hover:text-burgundy transition">{s.title}</h3>
-                <p className="text-warm-gray text-sm leading-relaxed">{s.desc}</p>
-              </article>
-            ))}
-          </div>
+          <RecentSermons />
         </div>
       </section>
 
@@ -282,17 +268,47 @@ export default function Home() {
         <span className="placeholder-badge">Placeholder background</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?w=1920&q=80&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="" />
-        <div className="absolute inset-0 bg-burgundy/80"></div>
-        <div className="relative max-w-3xl mx-auto text-center fade-up">
-          <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Generosity</div>
-          <h2 className="font-display text-4xl md:text-5xl mb-6 leading-tight">Give to the Lord&apos;s work.</h2>
-          <p className="text-cream/85 text-lg leading-relaxed mb-9 max-w-2xl mx-auto">
-            Every gift goes directly toward the ministry of Hardeetown — supporting missions, ministries, and the day-to-day work of the church.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#" className="bg-cream text-burgundy px-7 py-3.5 rounded-full font-semibold hover:bg-gold hover:text-ink transition">Give Online</a>
-            <a href="#" className="border-2 border-cream text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-cream hover:text-burgundy transition">Other Ways to Give</a>
+        <div className="absolute inset-0 bg-burgundy/85"></div>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto fade-up">
+            <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Generosity</div>
+            <h2 className="font-display text-4xl md:text-5xl mb-6 leading-tight">Give to the Lord&apos;s work.</h2>
+            <p className="text-cream/85 text-lg leading-relaxed mb-4">
+              Tithing is a test of our faith. Do we trust God to bless our increase by returning to Him the 10% that He requires of us? If we are God&apos;s children, all that we have is already His.
+            </p>
+            <p className="font-display text-gold-light text-2xl">Tithing is an act of worship!</p>
           </div>
+
+          <div className="grid md:grid-cols-3 gap-5 mt-12 fade-up">
+            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm flex flex-col">
+              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give Online</div>
+              {siteConfig.givingUrl ? (
+                <a href={siteConfig.givingUrl} target="_blank" rel="noopener" className="mt-auto inline-block bg-cream text-burgundy px-6 py-3 rounded-full font-semibold hover:bg-gold hover:text-ink transition">Give Now</a>
+              ) : (
+                <p className="text-cream/80">Online giving is coming soon.</p>
+              )}
+            </div>
+            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm">
+              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give in Person</div>
+              <p className="text-cream/85 leading-relaxed">
+                Join us for worship on Sundays at <span className="font-semibold text-cream">10:45 AM</span> and place your gift in the offering.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm">
+              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give by Mail</div>
+              <p className="text-cream/85 leading-relaxed">
+                Hardeetown Baptist Church
+                <br />
+                1716 NW 14th Street
+                <br />
+                Chiefland, FL 32626
+              </p>
+            </div>
+          </div>
+
+          <p className="text-cream/70 text-sm leading-relaxed max-w-3xl mx-auto text-center mt-10 fade-up">
+            All donations and tithes are credited to the general operating budget of the church. If you&apos;d like to give to a specific ministry, please contact the church office so your wishes can be shared with our stewardship team. We encourage undesignated contributions so the church can support all of our ministries equally. (In situations of financial emergency, the church reserves the right to redistribute designated offerings as necessary.)
+          </p>
         </div>
       </section>
 
@@ -347,62 +363,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <footer className="bg-ink text-cream pt-16 pb-8 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 mb-12">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-burgundy text-cream rounded-full flex items-center justify-center font-display font-bold">H</div>
-              <div>
-                <div className="font-display font-semibold text-lg">Hardeetown</div>
-                <div className="text-[10px] uppercase tracking-[0.22em] text-cream/60">Baptist Church</div>
-              </div>
-            </div>
-            <p className="text-cream/70 max-w-md leading-relaxed mb-6">
-              A family of believers in Chiefland, Florida, growing in Christ and reaching our community with the hope of the Gospel.
-            </p>
-            <div className="flex gap-3">
-              <a href="https://www.facebook.com/Hardeetown/" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="Facebook">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z" />
-                </svg>
-              </a>
-              <a href="https://www.youtube.com/channel/UClz59vJ7Pxt-RQuzWhtM99Q" target="_blank" rel="noopener" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-burgundy hover:border-burgundy transition" aria-label="YouTube">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-4">Visit</div>
-            <div className="text-cream/80 leading-relaxed text-sm">
-              1716 NW 14th Street
-              <br />
-              Chiefland, Florida 32626
-              <br />
-              <a href="tel:3524934523" className="hover:text-cream transition">(352) 493-4523</a>
-            </div>
-          </div>
-          <div>
-            <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-4">Service Times</div>
-            <div className="text-cream/80 leading-relaxed text-sm">
-              Sun · 10:45 AM &amp; 6:00 PM
-              <br />
-              Wed · 6:00 PM
-            </div>
-            <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mt-6 mb-4">Quick Links</div>
-            <ul className="text-cream/80 text-sm space-y-2">
-              <li><a href="#ministries" className="hover:text-cream transition">Ministries</a></li>
-              <li><a href="#sermons" className="hover:text-cream transition">Sermons</a></li>
-              <li><a href="#give" className="hover:text-cream transition">Give</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-cream/10 pt-6 text-center text-cream/50 text-xs">
-          © 2026 Hardeetown Baptist Church · Built with care in Chiefland, FL
-        </div>
-      </footer>
 
       <FadeInit />
     </>

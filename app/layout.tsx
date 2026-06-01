@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "@fontsource-variable/fraunces";
 import "@fontsource-variable/inter";
 import "./globals.css";
+import Nav from "./nav";
+import Footer from "./footer";
 
 export const metadata: Metadata = {
   title: "Hardeetown Baptist Church — Loving, Learning, Serving",
@@ -16,7 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="antialiased">
-      <body>{children}</body>
+      <body>
+        <div className="bg-ink text-cream text-center py-2 text-[11px] tracking-[0.2em] font-medium">
+          DEMO MOCKUP · PLACEHOLDER PHOTOS &amp; SAMPLE COPY · v1
+        </div>
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
