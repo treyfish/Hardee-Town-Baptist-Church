@@ -4,10 +4,6 @@ import RecentSermons from "./recent-sermons";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Home() {
-  const giveHref = siteConfig.givingUrl || "#visit";
-  const giveProps = siteConfig.givingUrl
-    ? { href: giveHref, target: "_blank", rel: "noopener" }
-    : { href: giveHref };
   return (
     <>
       <section id="top" className="relative h-[88vh] min-h-[620px] flex items-center justify-center text-cream overflow-hidden">
@@ -272,17 +268,47 @@ export default function Home() {
         <span className="placeholder-badge">Placeholder background</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?w=1920&q=80&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="" />
-        <div className="absolute inset-0 bg-burgundy/80"></div>
-        <div className="relative max-w-3xl mx-auto text-center fade-up">
-          <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Generosity</div>
-          <h2 className="font-display text-4xl md:text-5xl mb-6 leading-tight">Give to the Lord&apos;s work.</h2>
-          <p className="text-cream/85 text-lg leading-relaxed mb-9 max-w-2xl mx-auto">
-            Every gift goes directly toward the ministry of Hardeetown — supporting missions, ministries, and the day-to-day work of the church.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a {...giveProps} className="bg-cream text-burgundy px-7 py-3.5 rounded-full font-semibold hover:bg-gold hover:text-ink transition">Give Online</a>
-            <a href="#visit" className="border-2 border-cream text-cream px-7 py-3.5 rounded-full font-semibold hover:bg-cream hover:text-burgundy transition">Other Ways to Give</a>
+        <div className="absolute inset-0 bg-burgundy/85"></div>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto fade-up">
+            <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Generosity</div>
+            <h2 className="font-display text-4xl md:text-5xl mb-6 leading-tight">Give to the Lord&apos;s work.</h2>
+            <p className="text-cream/85 text-lg leading-relaxed mb-4">
+              Tithing is a test of our faith. Do we trust God to bless our increase by returning to Him the 10% that He requires of us? If we are God&apos;s children, all that we have is already His.
+            </p>
+            <p className="font-display text-gold-light text-2xl">Tithing is an act of worship!</p>
           </div>
+
+          <div className="grid md:grid-cols-3 gap-5 mt-12 fade-up">
+            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm flex flex-col">
+              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give Online</div>
+              {siteConfig.givingUrl ? (
+                <a href={siteConfig.givingUrl} target="_blank" rel="noopener" className="mt-auto inline-block bg-cream text-burgundy px-6 py-3 rounded-full font-semibold hover:bg-gold hover:text-ink transition">Give Now</a>
+              ) : (
+                <p className="text-cream/80">Online giving is coming soon.</p>
+              )}
+            </div>
+            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm">
+              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give in Person</div>
+              <p className="text-cream/85 leading-relaxed">
+                Join us for worship on Sundays at <span className="font-semibold text-cream">10:45 AM</span> and place your gift in the offering.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-cream/20 bg-ink/25 p-7 text-center backdrop-blur-sm">
+              <div className="text-gold text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give by Mail</div>
+              <p className="text-cream/85 leading-relaxed">
+                Hardeetown Baptist Church
+                <br />
+                1716 NW 14th Street
+                <br />
+                Chiefland, FL 32626
+              </p>
+            </div>
+          </div>
+
+          <p className="text-cream/70 text-sm leading-relaxed max-w-3xl mx-auto text-center mt-10 fade-up">
+            All donations and tithes are credited to the general operating budget of the church. If you&apos;d like to give to a specific ministry, please contact the church office so your wishes can be shared with our stewardship team. We encourage undesignated contributions so the church can support all of our ministries equally. (In situations of financial emergency, the church reserves the right to redistribute designated offerings as necessary.)
+          </p>
         </div>
       </section>
 
