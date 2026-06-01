@@ -56,6 +56,10 @@ export default function MinistriesPage() {
       {/* Youth — The Harbor */}
       <section id="youth" className="scroll-mt-24 bg-cream-2 py-20 md:py-28 px-6">
         <div className="max-w-4xl mx-auto fade-up">
+          <div className="flex justify-center mb-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ministries/harbor-banner.jpg" alt="The Harbor — Hardeetown Student Ministry" className="rounded-2xl w-full max-w-md shadow-md" />
+          </div>
           <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-3 font-semibold">Youth · Student Ministry</div>
           <h2 className="font-display text-3xl md:text-4xl mb-1 leading-tight">The Harbor</h2>
           <p className="text-gold font-display text-xl mb-6">Anchored in Faith. Driven by Purpose.</p>
@@ -93,14 +97,23 @@ export default function MinistriesPage() {
             </div>
           </div>
 
-          <Schedule
-            items={[
-              { label: "Wednesday Night", value: "6:30 – 8:00 PM — dinner provided, then Bible study, fun & fellowship" },
-              { label: "Sunday Morning", value: "9:30 AM — Bible study" },
-              { label: "Sunday Worship", value: "10:45 AM — in the Sanctuary" },
-              { label: "Sunday Evening", value: "6:00 – 7:00 PM — Bible study, fun & fellowship" },
-            ]}
-          />
+          <div className="grid md:grid-cols-3 gap-8 mt-10 items-start">
+            <div className="md:col-span-2">
+              <Schedule
+                items={[
+                  { label: "Wednesday Night", value: "6:30 – 8:00 PM — dinner provided, then Bible study, fun & fellowship" },
+                  { label: "Sunday Morning", value: "9:30 AM — Bible study" },
+                  { label: "Sunday Worship", value: "10:45 AM — in the Sanctuary" },
+                  { label: "Sunday Evening", value: "6:00 – 7:00 PM — Bible study, fun & fellowship" },
+                ]}
+              />
+            </div>
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/ministries/find-your-harbor.jpg" alt="Find your harbor — join us Wednesdays at 6:30 PM. Scan the code to connect." className="rounded-2xl w-full shadow-lg" />
+              <p className="text-warm-gray text-sm text-center mt-3">Scan to connect with The Harbor.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -113,28 +126,39 @@ export default function MinistriesPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-cream-2 rounded-2xl p-7 border border-burgundy/10 fade-up">
-              <h3 className="font-display text-2xl mb-4">Men&apos;s Ministry</h3>
-              <p className="text-warm-gray leading-relaxed mb-4">
-                Our men meet at least monthly for breakfast and fellowship — currently the first Sunday of each month at 8:00 AM, and the meal is free. Men of all ages are invited.
-              </p>
-              <p className="text-warm-gray leading-relaxed">
-                We also tackle ministry projects around the church and community. If you know of someone in need or a project a group of Christian men can help with, let us know — we have skilled men who would love to reach out in the name of Christ.
-              </p>
+            <div className="bg-cream-2 rounded-2xl overflow-hidden border border-burgundy/10 fade-up">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/ministries/mens-ministry.jpg" alt="Men's Ministry fellowship" className="w-full h-52 object-cover" />
+              <div className="p-7">
+                <h3 className="font-display text-2xl mb-4">Men&apos;s Ministry</h3>
+                <p className="text-warm-gray leading-relaxed mb-4">
+                  Our men meet at least monthly for breakfast and fellowship — currently the first Sunday of each month at 8:00 AM, and the meal is free. Men of all ages are invited.
+                </p>
+                <p className="text-warm-gray leading-relaxed">
+                  We also tackle ministry projects around the church and community. If you know of someone in need or a project a group of Christian men can help with, let us know — we have skilled men who would love to reach out in the name of Christ.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-cream-2 rounded-2xl p-7 border border-burgundy/10 fade-up">
-              <h3 className="font-display text-2xl mb-4">Senior Adults</h3>
-              <p className="text-warm-gray leading-relaxed mb-4">
-                Our senior adults meet monthly for fun, food, and fellowship. We pick a different restaurant to try out each month. Also, every other month we visit a different attraction somewhere in the north-central Florida area, and we eat lunch along the way.
-              </p>
-              <p className="text-warm-gray leading-relaxed">
-                Got an idea for a place you&apos;d like to visit, or a restaurant you&apos;ve always wanted to try but never got around to? Give us a call, then join us on the <span className="text-ink font-medium">fourth Thursday of each month</span>. We usually leave the church around 10:00 AM and return the same day by mid-afternoon. There&apos;s always room for one more!
-              </p>
+            <div className="bg-cream-2 rounded-2xl overflow-hidden border border-burgundy/10 fade-up">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/ministries/senior-adults.jpg" alt="Senior Adults group outing" className="w-full h-52 object-cover" />
+              <div className="p-7">
+                <h3 className="font-display text-2xl mb-4">Senior Adults</h3>
+                <p className="text-warm-gray leading-relaxed mb-4">
+                  Our senior adults meet monthly for fun, food, and fellowship. We pick a different restaurant to try out each month. Also, every other month we visit a different attraction somewhere in the north-central Florida area, and we eat lunch along the way.
+                </p>
+                <p className="text-warm-gray leading-relaxed">
+                  Got an idea for a place you&apos;d like to visit, or a restaurant you&apos;ve always wanted to try but never got around to? Give us a call, then join us on the <span className="text-ink font-medium">fourth Thursday of each month</span>. We usually leave the church around 10:00 AM and return the same day by mid-afternoon. There&apos;s always room for one more!
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="bg-cream-2 rounded-2xl p-7 md:p-10 border border-burgundy/10 fade-up">
+          <div className="bg-cream-2 rounded-2xl overflow-hidden border border-burgundy/10 fade-up">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ministries/womens-ministry.jpg" alt="Women's Ministry gathering" className="w-full h-56 object-cover" />
+            <div className="p-7 md:p-10">
             <h3 className="font-display text-2xl mb-4">Women&apos;s Ministry</h3>
             <p className="text-warm-gray leading-relaxed mb-3">
               Hardeetown Baptist Church Women&apos;s Ministry is a multi-faceted group, serving in many areas of the church&apos;s ministries. Our goal is to demonstrate Christ&apos;s love and to reach new people for Christ, in accordance with Acts 1:8.
@@ -154,6 +178,7 @@ export default function MinistriesPage() {
                 </div>
               ))}
             </div>
+            </div>
           </div>
         </div>
       </section>
@@ -171,6 +196,22 @@ export default function MinistriesPage() {
               Ask about the next season
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* K'Nex Groups — coming soon */}
+      <section id="knex" className="scroll-mt-24 py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto text-center fade-up">
+          <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-6 font-semibold">New · Coming soon</div>
+          <div className="mx-auto mb-8 inline-flex rounded-2xl bg-white p-6 md:p-8 shadow-sm border border-burgundy/10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/knex-groups.png" alt="K'Nex Groups — Connect. Grow. Serve. Reach." className="w-full max-w-xs md:max-w-sm" />
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl mb-4 leading-tight">K&apos;Nex Groups</h2>
+          <p className="text-warm-gray text-lg leading-relaxed">
+            A new way to connect, grow, and serve together at Hardeetown is on the way.{" "}
+            <span className="text-ink font-medium">More information coming soon.</span>
+          </p>
         </div>
       </section>
 
