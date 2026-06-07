@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeroCarousel from "./hero-carousel";
 import FadeInit from "./fade-init";
 import RecentSermons from "./recent-sermons";
 import EventCard from "./event-card";
@@ -9,12 +10,8 @@ export default function Home() {
   return (
     <>
       <section id="top" className="relative h-[88vh] min-h-[620px] flex items-center justify-center text-cream overflow-hidden">
-        <span className="placeholder-badge">Placeholder photo</span>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?w=1920&q=80&auto=format&fit=crop"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
+        <HeroCarousel
+          images={["/hero/fellowship-meal.jpg", "/hero/greeting.jpg", "/hero/gathering.jpg"]}
         />
         <div className="absolute inset-0 hero-overlay"></div>
         <div className="relative z-10 text-center px-6 max-w-4xl">
