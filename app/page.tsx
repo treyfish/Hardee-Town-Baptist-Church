@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <section id="top" className="relative h-[88vh] min-h-[620px] flex items-center justify-center text-cream overflow-hidden">
         <HeroCarousel
-          images={["/hero/sanctuary.jpg", "/hero/cross.jpg", "/hero/fellowship-meal.jpg", "/hero/greeting.jpg"]}
+          images={["/hero/hero1.jpg", "/hero/cross-hero.jpg", "/hero/fellowship-meal.jpg", "/hero/greeting.jpg"]}
         />
         <div className="absolute inset-0 hero-overlay"></div>
         <div className="relative z-10 text-center px-6 max-w-4xl">
