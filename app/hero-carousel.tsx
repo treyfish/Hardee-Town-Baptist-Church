@@ -17,6 +17,20 @@ export default function HeroCarousel({ images }: { images: string[] }) {
     return () => clearInterval(id);
   }, [images.length]);
 
+  // Detect orientation by preloading. Using a fresh Image() guarantees the
+  // load callback fires even when the file is already cached (an <img>
+  // onLoad can be missed if it resolves before React attaches the handler).
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new window.Image();
+      img.onload = () => {
+        const p = img.naturalHeight > img.naturalWidth;
+        setPortrait((prev) => (prev[src] === p ? prev : { ...prev, [src]: p }));
+      };
+      img.src = src;
+    });
+  }, [images]);
+
   return (
     <div className="absolute inset-0">
       {images.map((src, i) => {
@@ -42,13 +56,6 @@ export default function HeroCarousel({ images }: { images: string[] }) {
             <img
               src={src}
               alt=""
-              onLoad={(e) => {
-                const img = e.currentTarget;
-                const p = img.naturalHeight > img.naturalWidth;
-                setPortrait((prev) =>
-                  prev[src] === p ? prev : { ...prev, [src]: p }
-                );
-              }}
               className={`absolute inset-0 w-full h-full ${
                 isPortrait ? "object-contain" : "object-cover"
               }`}
