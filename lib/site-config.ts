@@ -40,7 +40,8 @@ export const siteConfig = {
   // Settings → (your calendar) → "Integrate calendar" → Calendar ID.
   // Looks like: abc123def456@group.calendar.google.com
   // Leave "" to show a friendly "calendar coming soon" placeholder.
-  googleCalendarId: "",
+  googleCalendarId:
+    "c_db2108c2261bb53cc5227d63ae0af80f8d8165023f36548ce054e8a2cdd649c8@group.calendar.google.com",
   timezone: "America/New_York",
 
   // Where contact-form messages should go (wired up later).
