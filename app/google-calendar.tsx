@@ -28,15 +28,37 @@ export default function GoogleCalendar() {
     `https://calendar.google.com/calendar/embed?src=${encodeURIComponent(googleCalendarId)}` +
     `&ctz=${encodeURIComponent(timezone)}&mode=AGENDA&showTitle=0&showPrint=0&showTabs=1&showCalendars=0`;
 
+  // One-tap subscribe links so members can sync the calendar to their own phones.
+  const addToGoogle = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(googleCalendarId)}`;
+  const subscribeApple = `webcal://calendar.google.com/calendar/ical/${encodeURIComponent(googleCalendarId)}/public/basic.ics`;
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-burgundy/15 bg-white shadow-sm">
-      <iframe
-        title={`${siteConfig.name} calendar`}
-        src={src}
-        className="w-full h-[560px] md:h-[640px]"
-        style={{ border: 0 }}
-        loading="lazy"
-      />
+    <div>
+      <div className="overflow-hidden rounded-2xl border border-burgundy/15 bg-white shadow-sm">
+        <iframe
+          title={`${siteConfig.name} calendar`}
+          src={src}
+          className="w-full h-[560px] md:h-[640px]"
+          style={{ border: 0 }}
+          loading="lazy"
+        />
+      </div>
+      <div className="mt-5 flex flex-wrap gap-3">
+        <a
+          href={addToGoogle}
+          target="_blank"
+          rel="noopener"
+          className="bg-burgundy text-cream px-6 py-3 rounded-full font-semibold hover:bg-burgundy-dark transition inline-flex items-center gap-2"
+        >
+          Add to Google Calendar
+        </a>
+        <a
+          href={subscribeApple}
+          className="border-2 border-burgundy/30 text-burgundy px-6 py-3 rounded-full font-semibold hover:bg-burgundy hover:text-cream transition inline-flex items-center gap-2"
+        >
+          Add to Apple Calendar
+        </a>
+      </div>
     </div>
   );
 }
