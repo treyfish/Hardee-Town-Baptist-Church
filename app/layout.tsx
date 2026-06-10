@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" className="antialiased">
       <body>
         <div className="bg-ink text-cream text-center py-2 text-[11px] tracking-[0.2em] font-medium">
-          DEMO MOCKUP · PLACEHOLDER PHOTOS &amp; SAMPLE COPY · v1
+          PREVIEW · REAL PHOTOS &amp; PASTOR FEEDBACK APPLIED · v2
         </div>
         <Nav />
         <main>{children}</main>

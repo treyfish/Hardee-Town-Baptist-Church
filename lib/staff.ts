@@ -10,7 +10,7 @@ export const staff: StaffMember[] = [
   {
     name: "Rev. Tony Parker",
     role: "Senior Pastor",
-    img: "/staff/tony-parker.jpg",
+    img: "/staff/tony-and-debbie-parker.jpg",
     bio: [
       "Bro. Tony graduated from The Baptist College of Florida in 1989. He accepted Jesus Christ as his Lord and Savior at the age of twelve, and God called him into the ministry shortly after he graduated from Eastside High School in Gainesville. Since then he has served in many capacities within the church — Youth Minister, Associate Pastor, Interim Pastor, teacher, and more.",
       "Bro. Tony has a burning passion to love and guide people and to see their lives changed by the power of God. He and his wife, Debbie, have four grown children and several grandchildren. Besides being Bro. Tony's soulmate and a fantastic lady of God, Debbie is a dedicated police officer and a great asset to HBC.",

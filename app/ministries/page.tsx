@@ -4,7 +4,7 @@ import FadeInit from "../fade-init";
 export const metadata: Metadata = {
   title: "Ministries · Hardeetown Baptist Church",
   description:
-    "Children, Youth (The Harbor), Adult, and UPWARD Sports ministries at Hardeetown Baptist Church in Chiefland, Florida.",
+    "Children, Hardeetown Student Ministries (HSM), Adult ministries, K'Nex Groups, and Judgement House at Hardeetown Baptist Church in Chiefland, Florida.",
 };
 
 function Schedule({ items }: { items: { label: string; value: string }[] }) {
@@ -50,51 +50,27 @@ export default function MinistriesPage() {
               { label: "Wednesday — AWANA", value: "6:30 – 7:00 PM (supper provided)" },
             ]}
           />
+          <div className="mt-8">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ministries/children-little-moments.jpg" alt="Little Moments — children gathered at the front of the sanctuary during the morning service" className="rounded-2xl w-full shadow-md" />
+            <p className="text-warm-gray text-sm text-center mt-3">&ldquo;Little Moments&rdquo; during Sunday morning worship.</p>
+          </div>
         </div>
       </section>
 
-      {/* Youth — The Harbor */}
+      {/* Students — Hardeetown Student Ministries (HSM) */}
       <section id="youth" className="scroll-mt-24 bg-cream-2 py-20 md:py-28 px-6">
         <div className="max-w-4xl mx-auto fade-up">
           <div className="flex justify-center mb-10">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/ministries/harbor-banner.jpg" alt="The Harbor — Hardeetown Student Ministry" className="rounded-2xl w-full max-w-md shadow-md" />
+            <img src="/ministries/hsm-sign.jpg" alt="Hardeetown Student Ministries — HSM" className="rounded-2xl w-full max-w-md shadow-md" />
           </div>
-          <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-3 font-semibold">Youth · Student Ministry</div>
-          <h2 className="font-display text-3xl md:text-4xl mb-1 leading-tight">The Harbor</h2>
-          <p className="text-gold font-display text-xl mb-6">Anchored in Faith. Driven by Purpose.</p>
+          <div className="uppercase tracking-[0.25em] text-[11px] text-burgundy mb-3 font-semibold">Students</div>
+          <h2 className="font-display text-3xl md:text-4xl mb-6 leading-tight">Hardeetown Student Ministries</h2>
           <div className="space-y-5 text-warm-gray text-lg leading-relaxed">
             <p>
-              The Harbor is a refuge where students find strength, purpose, and belonging in Christ. Just as a harbor provides safety from the storms, our ministry is a place where young people can anchor their faith, grow in their relationship with Jesus, and be equipped to navigate life&apos;s journey with confidence.
+              <span className="text-ink font-semibold">HSM</span> is where the students of Hardeetown grow in their faith, build real friendships, and learn to follow Christ together. From Bible study and worship to meals, fun, and fellowship, our students are equipped with biblical truth and surrounded by people who genuinely care about them.
             </p>
-            <blockquote className="border-l-2 border-burgundy pl-5 italic text-ink">
-              &ldquo;To be a safe haven where students encounter God&apos;s love, build unshakable faith, and are empowered to impact the world for Christ.&rdquo;
-            </blockquote>
-            <p className="font-display text-ink text-lg">
-              &ldquo;We have this hope as an anchor for the soul, firm and secure.&rdquo; — Hebrews 6:19
-            </p>
-          </div>
-
-          <div className="mt-10">
-            <h3 className="font-display text-2xl mb-6">H.A.R.B.O.R.</h3>
-            <div className="space-y-4">
-              {[
-                { letter: "H", title: "Held Firm in Truth", desc: "Rooted in Scripture and guided by God's Word." },
-                { letter: "A", title: "Anchored in Faith", desc: "Strengthened by worship, discipleship, and service." },
-                { letter: "R", title: "Rooted in Community", desc: "A welcoming place where students find friendship and support." },
-                { letter: "B", title: "Built for Purpose", desc: "Equipping students to follow Christ in all areas of life." },
-                { letter: "O", title: "Overflowing with Love", desc: "Showing God's love through action and outreach." },
-                { letter: "R", title: "Resilient in the Storms", desc: "Trusting in God's strength through every challenge." },
-              ].map((h, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="font-display text-3xl md:text-4xl text-gold leading-none w-8 shrink-0">{h.letter}</div>
-                  <div>
-                    <div className="font-semibold text-ink">{h.title}</div>
-                    <div className="text-warm-gray">{h.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-10 items-start">
@@ -108,10 +84,11 @@ export default function MinistriesPage() {
                 ]}
               />
             </div>
-            <div>
+            <div className="space-y-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/ministries/find-your-harbor.jpg" alt="Find your harbor — join us Wednesdays at 6:30 PM. Scan the code to connect." className="rounded-2xl w-full shadow-lg" />
-              <p className="text-warm-gray text-sm text-center mt-3">Scan to connect with The Harbor.</p>
+              <img src="/ministries/youth-prayer.jpg" alt="HSM students praying together before a meal" className="rounded-2xl w-full shadow-lg" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/ministries/youth-room.jpg" alt="The HSM student room" className="rounded-2xl w-full shadow-lg" />
             </div>
           </div>
         </div>
@@ -181,17 +158,17 @@ export default function MinistriesPage() {
         </div>
       </section>
 
-      {/* UPWARD Sports */}
-      <section id="upward" className="scroll-mt-24 bg-ink text-cream py-20 md:py-28 px-6">
+      {/* Judgement House */}
+      <section id="judgement-house" className="scroll-mt-24 bg-ink text-cream py-20 md:py-28 px-6">
         <div className="max-w-4xl mx-auto fade-up">
           <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-3 font-semibold">For the community</div>
-          <h2 className="font-display text-3xl md:text-4xl mb-6 leading-tight">UPWARD Sports</h2>
+          <h2 className="font-display text-3xl md:text-4xl mb-6 leading-tight">Judgement House</h2>
           <p className="text-cream/75 text-lg leading-relaxed max-w-2xl">
-            UPWARD Sports brings basketball and cheer leagues to kids in our community — building character, teamwork, and faith both on and off the court. It&apos;s one of the ways we love and serve the families of Chiefland.
+            Judgement House is a walk-through drama that presents the reality of the Gospel in a way you won&apos;t forget. It&apos;s one of the ways we reach the families of Chiefland with the hope of Christ. Details and dates for the next presentation are coming soon.
           </p>
           <div className="mt-8">
             <a href="/#contact" className="bg-cream text-burgundy px-7 py-3.5 rounded-full font-semibold hover:bg-gold hover:text-ink transition inline-block">
-              Ask about the next season
+              Ask about Judgement House
             </a>
           </div>
         </div>

@@ -4,7 +4,7 @@ export default function EventCard({ event }: { event: ChurchEvent }) {
   return (
     <article className="bg-cream-2 rounded-xl overflow-hidden lift">
       <div className="relative h-44 overflow-hidden">
-        <span className="placeholder-badge">Placeholder</span>
+        {event.img.startsWith("http") && <span className="placeholder-badge">Placeholder</span>}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={event.img} className="w-full h-full object-cover" alt="" />
       </div>

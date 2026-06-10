@@ -5,7 +5,7 @@ import FadeInit from "../fade-init";
 export const metadata: Metadata = {
   title: "Give · Hardeetown Baptist Church",
   description:
-    "Tithing is an act of worship. Give to the ministry of Hardeetown Baptist Church online, in person, or by mail.",
+    "Tithing is an act of worship. Give to the ministry of Hardeetown Baptist Church in person or by mail.",
 };
 
 export default function GivePage() {
@@ -25,15 +25,15 @@ export default function GivePage() {
             <p className="font-display text-burgundy text-2xl">Tithing is an act of worship!</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5 mt-12 fade-up">
-            <div className="rounded-2xl border border-burgundy/15 bg-cream-2 p-7 text-center flex flex-col">
-              <div className="text-burgundy text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give Online</div>
-              {siteConfig.givingUrl ? (
+          {/* No online giving for now (per pastor, June 2026). When the church
+              adopts a platform, set siteConfig.givingUrl and the card returns. */}
+          <div className={`grid gap-5 mt-12 fade-up ${siteConfig.givingUrl ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
+            {siteConfig.givingUrl && (
+              <div className="rounded-2xl border border-burgundy/15 bg-cream-2 p-7 text-center flex flex-col">
+                <div className="text-burgundy text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give Online</div>
                 <a href={siteConfig.givingUrl} target="_blank" rel="noopener" className="mt-auto inline-block bg-burgundy text-cream px-6 py-3 rounded-full font-semibold hover:bg-ink transition">Give Now</a>
-              ) : (
-                <p className="text-warm-gray">Online giving is coming soon.</p>
-              )}
-            </div>
+              </div>
+            )}
             <div className="rounded-2xl border border-burgundy/15 bg-cream-2 p-7 text-center">
               <div className="text-burgundy text-[10px] uppercase tracking-[0.25em] font-semibold mb-3">Give in Person</div>
               <p className="text-warm-gray leading-relaxed">

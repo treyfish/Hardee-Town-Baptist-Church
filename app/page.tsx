@@ -74,9 +74,8 @@ export default function Home() {
             </a>
           </div>
           <div className="relative fade-up">
-            <span className="placeholder-badge">Placeholder</span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=900&q=80&auto=format&fit=crop" alt="" className="rounded-2xl aspect-[4/5] object-cover w-full shadow-lg shadow-black/10" />
+            <img src="/welcome/handshake.jpg" alt="Members greeting one another across the pews at Hardeetown" className="rounded-2xl aspect-[4/5] object-cover w-full shadow-lg shadow-black/10" />
           </div>
         </div>
       </section>
@@ -161,16 +160,15 @@ export default function Home() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 fade-up">
             {[
-              { title: "Children", href: "/ministries#children", desc: "Little Moments, Sunday School, and Wednesday-night AWANA — where kids learn who Jesus is, and that they're loved.", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80&auto=format&fit=crop" },
-              { title: "Youth — The Harbor", href: "/ministries#youth", desc: "Anchored in faith, driven by purpose. A safe haven where students encounter God's love and build unshakable faith.", img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80&auto=format&fit=crop" },
-              { title: "Adults", href: "/ministries#adults", desc: "Men's, Women's, and Senior Adult ministries — breakfast, fellowship, missions, and serving our church and community together.", img: "https://images.unsplash.com/photo-1543269664-647b9ba6a410?w=600&q=80&auto=format&fit=crop" },
-              { title: "UPWARD Sports", href: "/ministries#upward", desc: "Basketball and cheer leagues for kids — building character on and off the court.", img: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=80&auto=format&fit=crop" },
+              { title: "Children", href: "/ministries#children", desc: "Little Moments, Sunday School, and Wednesday-night AWANA — where kids learn who Jesus is, and that they're loved.", img: "/ministries/children-little-moments.jpg" },
+              { title: "Students — HSM", href: "/ministries#youth", desc: "Hardeetown Student Ministries — where students grow in faith, build real friendships, and learn to follow Christ together.", img: "/ministries/youth-prayer.jpg" },
+              { title: "Adults", href: "/ministries#adults", desc: "Men's, Women's, and Senior Adult ministries — breakfast, fellowship, missions, and serving our church and community together.", img: "/ministries/adult-bible-study.jpg" },
+              { title: "K'Nex Groups", href: "/ministries#knex", desc: "Connect. Grow. Serve. Reach. A new way to build Kingdom relationships at Hardeetown — coming soon.", img: "/knex-groups.png", contain: true },
             ].map((m) => (
               <a key={m.title} href={m.href} className="group block bg-cream-2 rounded-xl overflow-hidden lift">
-                <div className="relative h-48 overflow-hidden">
-                  <span className="placeholder-badge">Placeholder</span>
+                <div className={`relative h-48 overflow-hidden ${m.contain ? "bg-white p-6" : ""}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={m.img} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="" />
+                  <img src={m.img} className={`w-full h-full ${m.contain ? "object-contain" : "object-cover"} group-hover:scale-105 transition duration-500`} alt="" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-xl mb-2">{m.title}</h3>
@@ -197,10 +195,9 @@ export default function Home() {
       </section>
 
       <section id="give" className="relative py-24 md:py-32 px-6 text-cream overflow-hidden">
-        <span className="placeholder-badge">Placeholder background</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?w=1920&q=80&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="" />
-        <div className="absolute inset-0 bg-burgundy/85"></div>
+        <img src="/give/sanctuary-wide.jpg" className="absolute inset-0 w-full h-full object-cover brightness-75" alt="" />
+        <div className="absolute inset-0 bg-burgundy-dark/85"></div>
         <div className="relative max-w-3xl mx-auto text-center fade-up">
           <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-4 font-semibold">Generosity</div>
           <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight">Give to the Lord&apos;s work.</h2>
