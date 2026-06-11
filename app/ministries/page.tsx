@@ -4,7 +4,7 @@ import FadeInit from "../fade-init";
 export const metadata: Metadata = {
   title: "Ministries · Hardeetown Baptist Church",
   description:
-    "Children, Hardeetown Student Ministries (HSM), Adult ministries, K'Nex Groups, and Judgement House at Hardeetown Baptist Church in Chiefland, Florida.",
+    "Children, Hardeetown Student Ministries (HSM), Adult ministries, and K'Nex Groups at Hardeetown Baptist Church in Chiefland, Florida.",
 };
 
 function Schedule({ items }: { items: { label: string; value: string }[] }) {
@@ -154,22 +154,6 @@ export default function MinistriesPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Judgement House */}
-      <section id="judgement-house" className="scroll-mt-24 bg-ink text-cream py-20 md:py-28 px-6">
-        <div className="max-w-4xl mx-auto fade-up">
-          <div className="uppercase tracking-[0.25em] text-[11px] text-gold mb-3 font-semibold">For the community</div>
-          <h2 className="font-display text-3xl md:text-4xl mb-6 leading-tight">Judgement House</h2>
-          <p className="text-cream/75 text-lg leading-relaxed max-w-2xl">
-            Judgement House is a walk-through drama that presents the reality of the Gospel in a way you won&apos;t forget. It&apos;s one of the ways we reach the families of Chiefland with the hope of Christ. Details and dates for the next presentation are coming soon.
-          </p>
-          <div className="mt-8">
-            <a href="/#contact" className="bg-cream text-burgundy px-7 py-3.5 rounded-full font-semibold hover:bg-gold hover:text-ink transition inline-block">
-              Ask about Judgement House
-            </a>
           </div>
         </div>
       </section>
