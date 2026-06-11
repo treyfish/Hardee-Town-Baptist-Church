@@ -43,14 +43,18 @@ _Last updated: 2026-06-10 (after pastor meeting)_
 - ✅ Design direction: real people/relationships, real photos of greeting &
   handshakes, "bold not bland," not too much scrolling, calendar kept up to date.
 
+### Dropped for now
+- ❌ **Member directory** — idea scratched (per Trey, 2026-06-10). Revisit only if
+  the church asks again.
+- ⏸️ **Judgement House** — section removed from the site for the moment; copy
+  saved in git history if it comes back.
+
 ### New questions
 - ❓ **"Beginning July"** — what begins in July? (Online giving? K'Nex? Launch?)
 - ❓ **"July 19th"** — what is this date? (Site go-live? K'Nex/"Konnect" launch?
   New Sunday-evening format — 6:00 traditional service · 45 min · 6:45 all together?)
 - ❓ **LIVE button** — pastor wants a "LIVE" button when the livestream is going.
   How do we know it's live (fixed Sunday window vs. manual toggle vs. FB/YT API)?
-- ❓ **Member directory** — "possible directory" + "secure link, membership."
-  Behind a password? What info would it show? (Privacy review needed.)
 - ❓ **Calendar curation** — only "specific things, not everything." Who maintains
   the Google Calendar, and which event types belong on the public site?
 - ❓ **Visitor forms** — confirmed forms should go to the **main office email** —
@@ -88,7 +92,6 @@ _Last updated: 2026-06-10 (after pastor meeting)_
 ## 5. Future build ideas (parked)
 
 - **LIVE button/indicator** for the livestream (see open question above).
-- **Member directory** behind a secure login (pastor interest; privacy review).
 - **"What to Expect on Sunday" section/page** — homepage link currently points
   to the About page.
 
